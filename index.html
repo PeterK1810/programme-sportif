@@ -1,0 +1,445 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0f1115"><meta name="robots" content="noindex">
+<title>Programme maison — 4 semaines</title>
+<style>
+:root{--bg:#0f1115;--card:#181b22;--fg:#eef0f4;--mut:#9aa3b2;--bd:#2a2f3a}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:1050px;margin:auto;padding:28px 18px 60px}
+h1{font-size:30px;margin:0 0 4px} .sub{color:var(--mut);margin:0 0 22px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:22px}
+.stat{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px} .stat b{font-size:22px;display:block} .stat small{color:var(--mut)}
+.box{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px 18px;margin-bottom:22px}
+.box h2{margin:0 0 8px;font-size:19px} .box ul{margin:6px 0;padding-left:20px} .box li{margin:3px 0}
+.week{display:grid;grid-template-columns:260px 1fr;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--bd)}
+.wt small{display:block;color:var(--mut);font-size:13px} .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.slot{text-decoration:none;color:var(--fg);border-left:4px solid var(--c);background:#20242d;border-radius:8px;padding:8px 10px}
+.slot span{display:block;font-size:13px;color:var(--mut)} .slot:hover{background:#272c37}
+.session{margin-top:34px;border-top:3px solid var(--c);padding-top:16px}
+.shead{display:flex;gap:14px;align-items:center} .shead h2{margin:0;font-size:22px} .fmt{margin:2px 0 0;color:var(--mut)}
+.badge{background:var(--c);color:#fff;font-weight:800;font-size:26px;width:52px;height:52px;border-radius:14px;display:grid;place-items:center;flex:none}
+h3{font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--c);margin:22px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.ex{background:var(--card);border:1px solid var(--bd);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.ex.simple{padding:4px 0} .exbody{padding:12px 14px} .exbody p{margin:6px 0;font-size:14.5px}
+.exhead{display:flex;justify-content:space-between;gap:8px;align-items:baseline} .exhead h4{margin:0;font-size:16px}
+.dose{background:var(--c,#444);color:#fff;border-radius:999px;padding:2px 10px;font-size:13px;font-weight:700;white-space:nowrap}
+.tip{color:#ffd58a} .note{color:var(--mut);font-size:13px;margin:10px 0 0}
+.nav{position:sticky;top:0;z-index:5;display:flex;gap:6px;overflow-x:auto;padding:8px 0;margin-bottom:14px;background:var(--bg);-webkit-overflow-scrolling:touch}
+.nav a{flex:none;text-decoration:none;color:var(--fg);background:#20242d;border:1px solid var(--bd);border-bottom:3px solid var(--c,#555);border-radius:10px;padding:8px 12px;font-size:14px;font-weight:600}
+html{scroll-behavior:smooth;scroll-padding-top:60px;-webkit-text-size-adjust:100%} .yt{font-size:13px;color:var(--mut)}
+.thumb{position:relative;border:0;padding:0;cursor:pointer;aspect-ratio:16/9;background:#000;width:100%;display:block;overflow:hidden;-webkit-tap-highlight-color:transparent}
+.thumb img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:.2s} .thumb:hover img{opacity:1;transform:scale(1.02)}
+.play{position:absolute;inset:0;margin:auto;width:58px;height:58px;border-radius:50%;background:rgba(230,0,0,.9);color:#fff;font-size:24px;display:grid;place-items:center;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(230,0,0,.6)}50%{box-shadow:0 0 0 14px rgba(230,0,0,0)}}
+iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
+@media(max-width:700px){.wrap{padding:14px 12px 50px} h1{font-size:24px} .week{grid-template-columns:1fr} .slots{gap:6px} .slot{padding:8px} .grid{grid-template-columns:1fr} .shead h2{font-size:19px} .badge{width:44px;height:44px;font-size:22px}}
+@media(prefers-reduced-motion:reduce){.play{animation:none}}
+@media print{.thumb,.yt{display:none} body{background:#fff;color:#000}}
+</style></head><body><div class="wrap">
+<h1>🏋️ Programme maison — 4 semaines</h1>
+<p class="sub">Recomposition (perdre du gras, gagner du muscle) · Poids du corps + tapis · 3 séances par semaine (lun / mer / ven)</p>
+<nav class="nav"><a href="#cal">📅 Calendrier</a><a href="#seance-A" style="--c:#e76f51">A · Lun</a><a href="#seance-B" style="--c:#2a9d8f">B · Mer</a><a href="#seance-C" style="--c:#7b5cd6">C · Ven</a><a href="#regles">🎯 Règles</a></nav>
+
+
+<div class="box" id="cal"><h2>📅 Calendrier des 4 semaines</h2>
+<div class="week"><div class="wt"><b>Semaine 1 — Apprentissage</b><small>Semaine chargée → version courte 20 min. Vise la technique, laisse 3 reps « en réserve ».</small></div><div class="slots"><a class="slot" href="#seance-A" style="--c:#e76f51"><b>Lun 2/11</b><span>Séance A · 20 min</span></a><a class="slot" href="#seance-B" style="--c:#2a9d8f"><b>Mer 4/11</b><span>Séance B · 20 min</span></a><a class="slot" href="#seance-C" style="--c:#7b5cd6"><b>Ven 6/11</b><span>Séance C · 20 min</span></a></div></div><div class="week"><div class="wt"><b>Semaine 2 — Installation</b><small>Version complète 30 min. Haut de la fourchette de reps.</small></div><div class="slots"><a class="slot" href="#seance-A" style="--c:#e76f51"><b>Lun 9/11</b><span>Séance A · 30 min</span></a><a class="slot" href="#seance-B" style="--c:#2a9d8f"><b>Mer 11/11</b><span>Séance B · 30 min</span></a><a class="slot" href="#seance-C" style="--c:#7b5cd6"><b>Ven 13/11</b><span>Séance C · 30 min</span></a></div></div><div class="week"><div class="wt"><b>Semaine 3 — Intensification</b><small>Semaine chargée → version courte 20 min, mais pompes un support plus bas, +5 s de gainage.</small></div><div class="slots"><a class="slot" href="#seance-A" style="--c:#e76f51"><b>Lun 16/11</b><span>Séance A · 20 min</span></a><a class="slot" href="#seance-B" style="--c:#2a9d8f"><b>Mer 18/11</b><span>Séance B · 20 min</span></a><a class="slot" href="#seance-C" style="--c:#7b5cd6"><b>Ven 20/11</b><span>Séance C · 20 min</span></a></div></div><div class="week"><div class="wt"><b>Semaine 4 — Progression</b><small>Version complète. +2 reps partout, circuit à 45 s / 15 s. Re-mesure-toi sur la balance le même jour/heure qu&#x27;au départ.</small></div><div class="slots"><a class="slot" href="#seance-A" style="--c:#e76f51"><b>Lun 23/11</b><span>Séance A · 30 min</span></a><a class="slot" href="#seance-B" style="--c:#2a9d8f"><b>Mer 25/11</b><span>Séance B · 30 min</span></a><a class="slot" href="#seance-C" style="--c:#7b5cd6"><b>Ven 27/11</b><span>Séance C · 30 min</span></a></div></div>
+<p class="note">Chaque séance est dans l'agenda à 14h00, avec un rappel à 8h00 le matin et un autre 15 min avant. Touche une case pour aller à la séance.</p></div>
+
+<div class="box" id="regles"><h2>🎯 Les règles du jeu</h2><ul>
+<li><b>Technique d'abord</b> : chaque rep contrôlée (2 s pour descendre). Finis chaque série en pouvant encore faire 2–3 reps.</li>
+<li><b>Progression</b> : quand tu atteins le haut de la fourchette sur toutes les séries, passe à la version plus dure (support plus bas, amplitude plus grande, +5 s).</li>
+<li><b>Cheville</b> : « genou au mur » à chaque séance + 2 min les jours off (en te brossant les dents, par exemple). Talons surélevés pour les squats en attendant.</li>
+<li><b>Version courte (20 min)</b> : échauffement 3 min, 2 séries au lieu de 3 (2 tours de circuit au lieu de 4), retour au calme 2 min.</li>
+<li><b>Douleur articulaire vive</b> (≠ brûlure musculaire) : on arrête l'exercice.</li>
+</ul></div>
+
+<div class="box"><h2>🍽️ Ce qui fait 70 % du résultat (hors séances)</h2><ul>
+<li><b>Calories</b> : léger déficit d'environ 300 kcal sous ta dépense journalière. Pas plus : en recomposition, un gros déficit fait perdre du muscle.</li><li><b>Protéines</b> : environ 1,7–1,9 g par kg de poids de corps et par jour, réparties sur 3–4 repas (œufs, légumineuses, poisson, volaille, skyr, tofu…).</li>
+<li><b>Pas</b> : 7 000 à 10 000 par jour.</li>
+<li><b>Sommeil</b> : 7 h+ ; c'est là que le muscle se construit.</li>
+<li><b>Mesure</b> : balance 1×/semaine, même jour, au réveil, à jeun. Les impédancemètres varient de ±2–3 % : regarde la tendance sur 4 semaines, pas un chiffre isolé. Le tour de taille (au nombril) est un bon complément.</li>
+</ul></div>
+
+<section class="session" id="seance-A" style="--c:#e76f51">
+  <div class="shead"><span class="badge">A</span><div><h2>Lundi — Force — Jambes &amp; Poussée</h2>
+  <p class="fmt">3 séries de chaque exercice (2 en version courte). Repos 60 s entre les séries.</p></div></div>
+  <h3>1 · Échauffement (5 min — 3 min en version courte)</h3>
+  <div class="grid"><div class="ex">
+  <button class="thumb" data-vid="y39PrKY_4JM" aria-label="Lire la vidéo Chat-vache">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/y39PrKY_4JM/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Chat-vache</h4><span class="dose">8 respirations</span></div>
+    <p>À quatre pattes : inspire en creusant le dos (regard devant), expire en arrondissant (menton vers la poitrine). Lent, au rythme de la respiration.</p>
+    <p class="tip">💡 Réveille la colonne avant tout le reste.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=y39PrKY_4JM" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div><div class="ex">
+  <button class="thumb" data-vid="ElrpduJn92Y" aria-label="Lire la vidéo Genou au mur (mobilité cheville)">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/ElrpduJn92Y/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Genou au mur (mobilité cheville)</h4><span class="dose">10 / côté</span></div>
+    <p>Face au mur, un pied à ~10 cm. Avance le genou pour toucher le mur SANS décoller le talon. 2 s en avant, retour. Recule le pied quand c&#x27;est facile.</p>
+    <p class="tip">💡 C&#x27;est TON exercice clé : à faire à chaque séance, et même les jours off. Mesure la distance pied-mur chaque semaine pour voir le progrès.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=ElrpduJn92Y" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div><div class="ex">
+  <button class="thumb" data-vid="OUgsJ8-Vi0E" aria-label="Lire la vidéo Pont fessier">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/OUgsJ8-Vi0E/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Pont fessier</h4><span class="dose">10</span></div>
+    <p>Sur le dos, pieds à plat, genoux pliés. Pousse dans les talons, serre les fessiers, monte jusqu&#x27;à l&#x27;alignement épaules-hanches-genoux. 1 s en haut, descente contrôlée.</p>
+    <p class="tip">💡 Ne cambre pas : c&#x27;est le fessier qui monte, pas le bas du dos.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=OUgsJ8-Vi0E" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div><div class="ex simple"><div class="exbody"><b>Cercles de bras + rotations de hanches : 30 s</b></div></div></div>
+  <h3>2 · Corps de séance (~20 min — ~13 min en version courte)</h3>
+  <div class="grid"><div class="ex">
+  <button class="thumb" data-vid="AVOS2JYsgrs" aria-label="Lire la vidéo Squat sur chaise">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/AVOS2JYsgrs/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Squat sur chaise</h4><span class="dose">10–12</span></div>
+    <p>Debout devant une chaise solide, pieds largeur d&#x27;épaules, pointes légèrement ouvertes. Hanches en arrière, effleure la chaise (sans s&#x27;affaler), remonte en poussant dans le sol.</p>
+    <p class="tip">💡 Cheville raide : glisse un livre ou le tapis plié sous les TALONS, et écarte un peu plus les pieds. Ça rend le squat beaucoup plus facile et propre.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=AVOS2JYsgrs" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div>
+<div class="ex">
+  <button class="thumb" data-vid="cfns5VDVVvk" aria-label="Lire la vidéo Pompes inclinées">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/cfns5VDVVvk/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Pompes inclinées</h4><span class="dose">8–12</span></div>
+    <p>Mains sur un plan de travail / table / rebord de canapé. Corps gainé et droit de la tête aux talons, coudes à ~45° du corps, poitrine vers le support.</p>
+    <p class="tip">💡 Plus le support est bas, plus c&#x27;est dur. Semaine 3-4 : descends d&#x27;un cran (chaise, puis sol).</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=cfns5VDVVvk" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div>
+<div class="ex">
+  <button class="thumb" data-vid="REflwhg0jNs" aria-label="Lire la vidéo Fente statique (split squat)">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/REflwhg0jNs/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Fente statique (split squat)</h4><span class="dose">8 / jambe</span></div>
+    <p>Un grand pas en avant, pied arrière sur la pointe. Descends verticalement, genou arrière vers le sol, buste droit. Remonte. Toutes les reps d&#x27;un côté, puis l&#x27;autre.</p>
+    <p class="tip">💡 Amplitude réduite au début. Tiens-toi à un mur ou une chaise pour l&#x27;équilibre si besoin.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=REflwhg0jNs" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div>
+<div class="ex">
+  <button class="thumb" data-vid="OUgsJ8-Vi0E" aria-label="Lire la vidéo Pont fessier">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/OUgsJ8-Vi0E/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Pont fessier</h4><span class="dose">15</span></div>
+    <p>Sur le dos, pieds à plat, genoux pliés. Pousse dans les talons, serre les fessiers, monte jusqu&#x27;à l&#x27;alignement épaules-hanches-genoux. 1 s en haut, descente contrôlée.</p>
+    <p class="tip">💡 Ne cambre pas : c&#x27;est le fessier qui monte, pas le bas du dos.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=OUgsJ8-Vi0E" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div>
+<div class="ex">
+  <button class="thumb" data-vid="UBa7wBucN-4" aria-label="Lire la vidéo Dead bug">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/UBa7wBucN-4/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Dead bug</h4><span class="dose">8 / côté</span></div>
+    <p>Sur le dos, bras vers le plafond, genoux à 90°. Bas du dos COLLÉ au sol, tends un bras et la jambe opposée lentement, reviens, change.</p>
+    <p class="tip">💡 Si le dos décolle, réduis l&#x27;amplitude.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=UBa7wBucN-4" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div>
+<div class="ex">
+  <button class="thumb" data-vid="mwlp75MS6Rg" aria-label="Lire la vidéo Gainage planche">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/mwlp75MS6Rg/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Gainage planche</h4><span class="dose">30 s</span></div>
+    <p>Sur les avant-bras, coudes sous les épaules, corps droit, fessiers et abdos serrés. Respire normalement.</p>
+    <p class="tip">💡 Mieux vaut 20 s parfaites que 60 s affaissées.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=mwlp75MS6Rg" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div></div>
+  <h3>3 · Retour au calme (3 min)</h3>
+  <div class="grid"><div class="ex">
+  <button class="thumb" data-vid="ElrpduJn92Y" aria-label="Lire la vidéo Genou au mur (mobilité cheville)">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/ElrpduJn92Y/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Genou au mur (mobilité cheville)</h4><span class="dose">Tenir 30 s / côté en fin d&#x27;amplitude</span></div>
+    <p>Face au mur, un pied à ~10 cm. Avance le genou pour toucher le mur SANS décoller le talon. 2 s en avant, retour. Recule le pied quand c&#x27;est facile.</p>
+    <p class="tip">💡 C&#x27;est TON exercice clé : à faire à chaque séance, et même les jours off. Mesure la distance pied-mur chaque semaine pour voir le progrès.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=ElrpduJn92Y" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div><div class="ex simple"><div class="exbody"><b>Étirement mollet contre le mur genou tendu : 30 s / côté</b></div></div><div class="ex simple"><div class="exbody"><b>Posture de l&#x27;enfant sur le tapis : 1 min de respiration lente</b></div></div></div>
+</section><section class="session" id="seance-B" style="--c:#2a9d8f">
+  <div class="shead"><span class="badge">B</span><div><h2>Mercredi — Force — Tirage, Dos &amp; Posture</h2>
+  <p class="fmt">3 séries de chaque exercice (2 en version courte). Repos 60 s entre les séries.</p></div></div>
+  <h3>1 · Échauffement (5 min — 3 min en version courte)</h3>
+  <div class="grid"><div class="ex">
+  <button class="thumb" data-vid="y39PrKY_4JM" aria-label="Lire la vidéo Chat-vache">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/y39PrKY_4JM/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Chat-vache</h4><span class="dose">8 respirations</span></div>
+    <p>À quatre pattes : inspire en creusant le dos (regard devant), expire en arrondissant (menton vers la poitrine). Lent, au rythme de la respiration.</p>
+    <p class="tip">💡 Réveille la colonne avant tout le reste.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=y39PrKY_4JM" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div><div class="ex">
+  <button class="thumb" data-vid="ElrpduJn92Y" aria-label="Lire la vidéo Genou au mur (mobilité cheville)">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/ElrpduJn92Y/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Genou au mur (mobilité cheville)</h4><span class="dose">10 / côté</span></div>
+    <p>Face au mur, un pied à ~10 cm. Avance le genou pour toucher le mur SANS décoller le talon. 2 s en avant, retour. Recule le pied quand c&#x27;est facile.</p>
+    <p class="tip">💡 C&#x27;est TON exercice clé : à faire à chaque séance, et même les jours off. Mesure la distance pied-mur chaque semaine pour voir le progrès.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=ElrpduJn92Y" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div><div class="ex">
+  <button class="thumb" data-vid="OUgsJ8-Vi0E" aria-label="Lire la vidéo Pont fessier">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/OUgsJ8-Vi0E/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Pont fessier</h4><span class="dose">10</span></div>
+    <p>Sur le dos, pieds à plat, genoux pliés. Pousse dans les talons, serre les fessiers, monte jusqu&#x27;à l&#x27;alignement épaules-hanches-genoux. 1 s en haut, descente contrôlée.</p>
+    <p class="tip">💡 Ne cambre pas : c&#x27;est le fessier qui monte, pas le bas du dos.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=OUgsJ8-Vi0E" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div><div class="ex simple"><div class="exbody"><b>Cercles de bras + rotations de hanches : 30 s</b></div></div></div>
+  <h3>2 · Corps de séance (~20 min — ~13 min en version courte)</h3>
+  <div class="grid"><div class="ex">
+  <button class="thumb" data-vid="61zbhuRiwQg" aria-label="Lire la vidéo Good morning (charnière de hanche)">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/61zbhuRiwQg/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Good morning (charnière de hanche)</h4><span class="dose">12</span></div>
+    <p>Debout, mains sur la tête ou croisées sur la poitrine, genoux légèrement fléchis. Pousse les fesses en arrière, buste qui s&#x27;incline dos PLAT, jusqu&#x27;à étirement des ischios. Remonte en serrant les fessiers.</p>
+    <p class="tip">💡 Aucune contrainte sur la cheville : parfait pour toi.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=61zbhuRiwQg" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div>
+<div class="ex">
+  <button class="thumb" data-vid="EIFEKZe4Wm8" aria-label="Lire la vidéo Rowing inversé sous une table">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/EIFEKZe4Wm8/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Rowing inversé sous une table</h4><span class="dose">8–10</span></div>
+    <p>Allongé sous une table TRÈS solide, mains sur le bord. Corps gainé, tire la poitrine vers la table, redescends lentement.</p>
+    <p class="tip">💡 Vérifie que la table ne bascule pas ! Plus facile : genoux pliés. Alternative : serviette dans une porte fermée (côté charnières), en tirant le corps vers la porte.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=EIFEKZe4Wm8" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div>
+<div class="ex">
+  <button class="thumb" data-vid="7pkeQFzJR9g" aria-label="Lire la vidéo Fente arrière">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/7pkeQFzJR9g/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Fente arrière</h4><span class="dose">8 / jambe</span></div>
+    <p>Debout, recule une jambe, descends genou arrière vers le sol, revient en poussant sur le talon avant. Alterne.</p>
+    <p class="tip">💡 La fente ARRIÈRE sollicite beaucoup moins la cheville que la fente avant.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=7pkeQFzJR9g" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div>
+<div class="ex">
+  <button class="thumb" data-vid="QdGTI4Lshg4" aria-label="Lire la vidéo Y-T-W au sol">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/QdGTI4Lshg4/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Y-T-W au sol</h4><span class="dose">6 cycles</span></div>
+    <p>À plat ventre, front sur le tapis. Lève les bras en Y (pouces vers le ciel), puis en T, puis en W (coudes pliés, omoplates serrées). 2 s par position.</p>
+    <p class="tip">💡 Excellent pour la posture et les épaules. Petit mouvement, gros effet.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=QdGTI4Lshg4" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div>
+<div class="ex">
+  <button class="thumb" data-vid="z6PJMT2y8GQ" aria-label="Lire la vidéo Superman">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/z6PJMT2y8GQ/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Superman</h4><span class="dose">10</span></div>
+    <p>À plat ventre, bras tendus devant. Décolle bras, poitrine et jambes ensemble, 2 s en haut, redescends.</p>
+    <p class="tip">💡 Regard vers le sol pour ne pas casser la nuque.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=z6PJMT2y8GQ" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div>
+<div class="ex">
+  <button class="thumb" data-vid="N_s9em1xTqU" aria-label="Lire la vidéo Gainage latéral">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/N_s9em1xTqU/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Gainage latéral</h4><span class="dose">20 s / côté</span></div>
+    <p>Sur un avant-bras, pieds empilés (ou genoux au sol pour simplifier), hanches hautes, corps aligné.</p>
+    <p class="tip">💡 Version genoux au sol en semaine 1-2.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=N_s9em1xTqU" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div></div>
+  <h3>3 · Retour au calme (3 min)</h3>
+  <div class="grid"><div class="ex">
+  <button class="thumb" data-vid="ElrpduJn92Y" aria-label="Lire la vidéo Genou au mur (mobilité cheville)">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/ElrpduJn92Y/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Genou au mur (mobilité cheville)</h4><span class="dose">Tenir 30 s / côté en fin d&#x27;amplitude</span></div>
+    <p>Face au mur, un pied à ~10 cm. Avance le genou pour toucher le mur SANS décoller le talon. 2 s en avant, retour. Recule le pied quand c&#x27;est facile.</p>
+    <p class="tip">💡 C&#x27;est TON exercice clé : à faire à chaque séance, et même les jours off. Mesure la distance pied-mur chaque semaine pour voir le progrès.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=ElrpduJn92Y" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div><div class="ex simple"><div class="exbody"><b>Étirement mollet contre le mur genou tendu : 30 s / côté</b></div></div><div class="ex simple"><div class="exbody"><b>Posture de l&#x27;enfant sur le tapis : 1 min de respiration lente</b></div></div></div>
+</section><section class="session" id="seance-C" style="--c:#7b5cd6">
+  <div class="shead"><span class="badge">C</span><div><h2>Vendredi — Circuit cardio-métabolique</h2>
+  <p class="fmt">Circuit : 40 s d&#x27;effort / 20 s de repos, enchaîne les 6 exercices = 1 tour. 4 tours (2 en version courte), 1 min de pause entre les tours.</p></div></div>
+  <h3>1 · Échauffement (5 min — 3 min en version courte)</h3>
+  <div class="grid"><div class="ex">
+  <button class="thumb" data-vid="y39PrKY_4JM" aria-label="Lire la vidéo Chat-vache">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/y39PrKY_4JM/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Chat-vache</h4><span class="dose">8 respirations</span></div>
+    <p>À quatre pattes : inspire en creusant le dos (regard devant), expire en arrondissant (menton vers la poitrine). Lent, au rythme de la respiration.</p>
+    <p class="tip">💡 Réveille la colonne avant tout le reste.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=y39PrKY_4JM" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div><div class="ex">
+  <button class="thumb" data-vid="ElrpduJn92Y" aria-label="Lire la vidéo Genou au mur (mobilité cheville)">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/ElrpduJn92Y/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Genou au mur (mobilité cheville)</h4><span class="dose">10 / côté</span></div>
+    <p>Face au mur, un pied à ~10 cm. Avance le genou pour toucher le mur SANS décoller le talon. 2 s en avant, retour. Recule le pied quand c&#x27;est facile.</p>
+    <p class="tip">💡 C&#x27;est TON exercice clé : à faire à chaque séance, et même les jours off. Mesure la distance pied-mur chaque semaine pour voir le progrès.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=ElrpduJn92Y" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div><div class="ex">
+  <button class="thumb" data-vid="OUgsJ8-Vi0E" aria-label="Lire la vidéo Pont fessier">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/OUgsJ8-Vi0E/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Pont fessier</h4><span class="dose">10</span></div>
+    <p>Sur le dos, pieds à plat, genoux pliés. Pousse dans les talons, serre les fessiers, monte jusqu&#x27;à l&#x27;alignement épaules-hanches-genoux. 1 s en haut, descente contrôlée.</p>
+    <p class="tip">💡 Ne cambre pas : c&#x27;est le fessier qui monte, pas le bas du dos.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=OUgsJ8-Vi0E" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div><div class="ex simple"><div class="exbody"><b>Cercles de bras + rotations de hanches : 30 s</b></div></div></div>
+  <h3>2 · Corps de séance (~20 min — ~13 min en version courte)</h3>
+  <div class="grid"><div class="ex">
+  <button class="thumb" data-vid="AVOS2JYsgrs" aria-label="Lire la vidéo Squat sur chaise">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/AVOS2JYsgrs/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Squat sur chaise</h4><span class="dose">40 s</span></div>
+    <p>Debout devant une chaise solide, pieds largeur d&#x27;épaules, pointes légèrement ouvertes. Hanches en arrière, effleure la chaise (sans s&#x27;affaler), remonte en poussant dans le sol.</p>
+    <p class="tip">💡 Cheville raide : glisse un livre ou le tapis plié sous les TALONS, et écarte un peu plus les pieds. Ça rend le squat beaucoup plus facile et propre.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=AVOS2JYsgrs" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div>
+<div class="ex">
+  <button class="thumb" data-vid="cfns5VDVVvk" aria-label="Lire la vidéo Pompes inclinées">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/cfns5VDVVvk/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Pompes inclinées</h4><span class="dose">40 s</span></div>
+    <p>Mains sur un plan de travail / table / rebord de canapé. Corps gainé et droit de la tête aux talons, coudes à ~45° du corps, poitrine vers le support.</p>
+    <p class="tip">💡 Plus le support est bas, plus c&#x27;est dur. Semaine 3-4 : descends d&#x27;un cran (chaise, puis sol).</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=cfns5VDVVvk" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div>
+<div class="ex">
+  <button class="thumb" data-vid="cnyTQDSE884" aria-label="Lire la vidéo Mountain climbers (lents)">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/cnyTQDSE884/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Mountain climbers (lents)</h4><span class="dose">40 s</span></div>
+    <p>En position de pompe, ramène un genou vers la poitrine, puis l&#x27;autre. Rythme contrôlé, hanches basses.</p>
+    <p class="tip">💡 Mains sur une chaise / le canapé pour une version plus douce.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=cnyTQDSE884" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div>
+<div class="ex">
+  <button class="thumb" data-vid="OUgsJ8-Vi0E" aria-label="Lire la vidéo Pont fessier">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/OUgsJ8-Vi0E/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Pont fessier</h4><span class="dose">40 s</span></div>
+    <p>Sur le dos, pieds à plat, genoux pliés. Pousse dans les talons, serre les fessiers, monte jusqu&#x27;à l&#x27;alignement épaules-hanches-genoux. 1 s en haut, descente contrôlée.</p>
+    <p class="tip">💡 Ne cambre pas : c&#x27;est le fessier qui monte, pas le bas du dos.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=OUgsJ8-Vi0E" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div>
+<div class="ex">
+  <button class="thumb" data-vid="7pkeQFzJR9g" aria-label="Lire la vidéo Fente arrière">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/7pkeQFzJR9g/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Fente arrière</h4><span class="dose">40 s alterné</span></div>
+    <p>Debout, recule une jambe, descends genou arrière vers le sol, revient en poussant sur le talon avant. Alterne.</p>
+    <p class="tip">💡 La fente ARRIÈRE sollicite beaucoup moins la cheville que la fente avant.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=7pkeQFzJR9g" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div>
+<div class="ex">
+  <button class="thumb" data-vid="wiFNA3sqjCA" aria-label="Lire la vidéo Bird dog">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/wiFNA3sqjCA/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Bird dog</h4><span class="dose">40 s</span></div>
+    <p>À quatre pattes, tends bras droit + jambe gauche, dos plat comme une table, 2 s, reviens. Alterne.</p>
+    <p class="tip">💡 Imagine un verre d&#x27;eau posé sur ton dos.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=wiFNA3sqjCA" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div></div>
+  <h3>3 · Retour au calme (3 min)</h3>
+  <div class="grid"><div class="ex">
+  <button class="thumb" data-vid="ElrpduJn92Y" aria-label="Lire la vidéo Genou au mur (mobilité cheville)">
+    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/ElrpduJn92Y/mqdefault.jpg" alt="">
+    <span class="play">▶</span>
+  </button>
+  <div class="exbody">
+    <div class="exhead"><h4>Genou au mur (mobilité cheville)</h4><span class="dose">Tenir 30 s / côté en fin d&#x27;amplitude</span></div>
+    <p>Face au mur, un pied à ~10 cm. Avance le genou pour toucher le mur SANS décoller le talon. 2 s en avant, retour. Recule le pied quand c&#x27;est facile.</p>
+    <p class="tip">💡 C&#x27;est TON exercice clé : à faire à chaque séance, et même les jours off. Mesure la distance pied-mur chaque semaine pour voir le progrès.</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=ElrpduJn92Y" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
+  </div>
+</div><div class="ex simple"><div class="exbody"><b>Étirement mollet contre le mur genou tendu : 30 s / côté</b></div></div><div class="ex simple"><div class="exbody"><b>Posture de l&#x27;enfant sur le tapis : 1 min de respiration lente</b></div></div></div>
+</section>
+<p class="sub" style="margin-top:40px">Clique sur une miniature pour lancer la vidéo de démonstration ici même. Vidéos : NASM, Yoga With Adriene, Horton Barbell, Airrosti, etc.</p>
+</div>
+<script>
+document.querySelectorAll('.thumb').forEach(b=>b.addEventListener('click',()=>{
+  const f=document.createElement('iframe');
+  f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.vid+'?autoplay=1&rel=0&playsinline=1&modestbranding=1';
+  f.allow='autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen=true;
+  b.replaceWith(f);
+}));
+</script></body></html>
