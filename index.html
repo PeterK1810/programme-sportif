@@ -1,456 +1,838 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0f1115"><meta name="robots" content="noindex">
-<title>Programme maison — 4 semaines</title>
-<style>
-:root{--bg:#0f1115;--card:#181b22;--fg:#eef0f4;--mut:#9aa3b2;--bd:#2a2f3a}
-*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-.wrap{max-width:1050px;margin:auto;padding:28px 18px 60px}
-h1{font-size:30px;margin:0 0 4px} .sub{color:var(--mut);margin:0 0 22px}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:22px}
-.stat{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px} .stat b{font-size:22px;display:block} .stat small{color:var(--mut)}
-.box{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px 18px;margin-bottom:22px}
-.box h2{margin:0 0 8px;font-size:19px} .box ul{margin:6px 0;padding-left:20px} .box li{margin:3px 0}
-.week{display:grid;grid-template-columns:260px 1fr;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--bd)}
-.wt small{display:block;color:var(--mut);font-size:13px} .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.slot{text-decoration:none;color:var(--fg);border-left:4px solid var(--c);background:#20242d;border-radius:8px;padding:8px 10px}
-.slot span{display:block;font-size:13px;color:var(--mut)} .slot:hover{background:#272c37}
-.session{margin-top:34px;border-top:3px solid var(--c);padding-top:16px}
-.shead{display:flex;gap:14px;align-items:center} .shead h2{margin:0;font-size:22px} .fmt{margin:2px 0 0;color:var(--mut)}
-.badge{background:var(--c);color:#fff;font-weight:800;font-size:26px;width:52px;height:52px;border-radius:14px;display:grid;place-items:center;flex:none}
-h3{font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--c);margin:22px 0 10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
-.ex{background:var(--card);border:1px solid var(--bd);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
-.ex.simple{padding:4px 0} .exbody{padding:12px 14px} .exbody p{margin:6px 0;font-size:14.5px}
-.exhead{display:flex;justify-content:space-between;gap:8px;align-items:baseline} .exhead h4{margin:0;font-size:16px}
-.dose{background:var(--c,#444);color:#fff;border-radius:999px;padding:2px 10px;font-size:13px;font-weight:700;white-space:nowrap}
-.tip{color:#ffd58a} .note{color:var(--mut);font-size:13px;margin:10px 0 0}
-.nav{position:sticky;top:0;z-index:5;display:flex;gap:6px;overflow-x:auto;padding:8px 0;margin-bottom:14px;background:var(--bg);-webkit-overflow-scrolling:touch}
-.nav a{flex:none;text-decoration:none;color:var(--fg);background:#20242d;border:1px solid var(--bd);border-bottom:3px solid var(--c,#555);border-radius:10px;padding:8px 12px;font-size:14px;font-weight:600}
-html{scroll-behavior:smooth;scroll-padding-top:60px;-webkit-text-size-adjust:100%} .yt{font-size:13px;color:var(--mut)}
-.thumb{position:relative;border:0;padding:0;cursor:pointer;aspect-ratio:16/9;background:#000;width:100%;display:block;overflow:hidden;-webkit-tap-highlight-color:transparent}
-.thumb img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:.2s} .thumb:hover img{opacity:1;transform:scale(1.02)}
-.play{position:absolute;inset:0;margin:auto;width:58px;height:58px;border-radius:50%;background:rgba(230,0,0,.9);color:#fff;font-size:24px;display:grid;place-items:center;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(230,0,0,.6)}50%{box-shadow:0 0 0 14px rgba(230,0,0,0)}}
-iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
-@media(max-width:700px){.wrap{padding:14px 12px 50px} h1{font-size:24px} .week{grid-template-columns:1fr} .slots{gap:6px} .slot{padding:8px} .grid{grid-template-columns:1fr} .shead h2{font-size:19px} .badge{width:44px;height:44px;font-size:22px}}
-@media(prefers-reduced-motion:reduce){.play{animation:none}}
-@media print{.thumb,.yt{display:none} body{background:#fff;color:#000}}
-</style></head><body><div class="wrap">
-<h1>🏋️ Programme maison — 4 semaines</h1>
-<p class="sub">Recomposition (perdre du gras, gagner du muscle) · Poids du corps + tapis · 3 séances par semaine (lun / mer / ven)</p>
-<nav class="nav"><a href="#cal">📅 Calendrier</a><a href="#seance-A" style="--c:#e76f51">A · Lun</a><a href="#seance-B" style="--c:#2a9d8f">B · Mer</a><a href="#seance-C" style="--c:#7b5cd6">C · Ven</a><a href="#regles">🎯 Règles</a><a href="alimentation.html" style="--c:#f4a261">🍽️ Alimentation</a><a href="#optimiser" style="--c:#e9c46a">🚀 Optimiser</a></nav>
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0c0e">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Programme d'entraînement maison de 4 semaines, menu et liste de courses.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Programme">
+<meta name="format-detection" content="telephone=no">
+<title>Programme maison</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://i.ytimg.com">
+<style>@font-face{font-family:"Archivo";src:url("assets/archivo.woff2") format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+:root{
+  --bg:#0b0c0e;--s1:#141619;--s2:#1c1f24;--s3:#252930;--line:#2a2e35;
+  --ink:#f2f3ef;--mut:#a2a7b0;--dim:#6f747d;
+  --lime:#d4ff4a;--lime-ink:#141a00;--ok:#6be39a;--warn:#ffd27a;
+  --A:#ff7a59;--B:#38cbb4;--C:#f3b53f;
+  --r:18px;--r-s:12px;--tab:64px;
+  --safe-b:env(safe-area-inset-bottom,0px);--safe-t:env(safe-area-inset-top,0px);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  color-scheme:dark;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 "Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-stretch:100%;
+  -webkit-font-smoothing:antialiased;overscroll-behavior-y:none;min-height:100dvh}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none;padding:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:6px}
+h1,h2,h3{margin:0;font-weight:800;line-height:1.05;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+.cond{font-stretch:72%;letter-spacing:-.005em}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
+/* ---------- shell ---------- */
+#app{max-width:640px;margin:0 auto;padding:calc(var(--safe-t) + 18px) 18px calc(var(--tab) + var(--safe-b) + 28px)}
+.view{animation:viewIn .32s var(--ease) both}
+@keyframes viewIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.tabs{position:fixed;inset:auto 0 0 0;z-index:20;background:var(--bg);border-top:1px solid var(--line);padding-bottom:var(--safe-b)}
+.tabs nav{max-width:640px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);height:var(--tab)}
+.tabs a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-decoration:none;color:var(--dim);font-size:11.5px;font-weight:600;letter-spacing:.01em;transition:color .2s}
+.tabs a svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s var(--ease)}
+.tabs a[aria-current="page"]{color:var(--ink)}
+.tabs a[aria-current="page"] svg{stroke:var(--lime);transform:translateY(-1px)}
+.tabs a:active svg{transform:scale(.9)}
 
-<div class="box" id="cal"><h2>📅 Calendrier des 4 semaines</h2>
-<div class="week"><div class="wt"><b>Semaine 1 — Apprentissage</b><small>Semaine chargée → version courte 20 min. Vise la technique, laisse 3 reps « en réserve ».</small></div><div class="slots"><a class="slot" href="#seance-A" style="--c:#e76f51"><b>Lun 2/11</b><span>Séance A · 20 min</span></a><a class="slot" href="#seance-B" style="--c:#2a9d8f"><b>Mer 4/11</b><span>Séance B · 20 min</span></a><a class="slot" href="#seance-C" style="--c:#7b5cd6"><b>Ven 6/11</b><span>Séance C · 20 min</span></a></div></div><div class="week"><div class="wt"><b>Semaine 2 — Installation</b><small>Version complète 30 min. Haut de la fourchette de reps.</small></div><div class="slots"><a class="slot" href="#seance-A" style="--c:#e76f51"><b>Lun 9/11</b><span>Séance A · 30 min</span></a><a class="slot" href="#seance-B" style="--c:#2a9d8f"><b>Mer 11/11</b><span>Séance B · 30 min</span></a><a class="slot" href="#seance-C" style="--c:#7b5cd6"><b>Ven 13/11</b><span>Séance C · 30 min</span></a></div></div><div class="week"><div class="wt"><b>Semaine 3 — Intensification</b><small>Semaine chargée → version courte 20 min, mais pompes un support plus bas, +5 s de gainage.</small></div><div class="slots"><a class="slot" href="#seance-A" style="--c:#e76f51"><b>Lun 16/11</b><span>Séance A · 20 min</span></a><a class="slot" href="#seance-B" style="--c:#2a9d8f"><b>Mer 18/11</b><span>Séance B · 20 min</span></a><a class="slot" href="#seance-C" style="--c:#7b5cd6"><b>Ven 20/11</b><span>Séance C · 20 min</span></a></div></div><div class="week"><div class="wt"><b>Semaine 4 — Progression</b><small>Version complète. +2 reps partout, circuit à 45 s / 15 s. Re-mesure-toi sur la balance le même jour/heure qu&#x27;au départ.</small></div><div class="slots"><a class="slot" href="#seance-A" style="--c:#e76f51"><b>Lun 23/11</b><span>Séance A · 30 min</span></a><a class="slot" href="#seance-B" style="--c:#2a9d8f"><b>Mer 25/11</b><span>Séance B · 30 min</span></a><a class="slot" href="#seance-C" style="--c:#7b5cd6"><b>Ven 27/11</b><span>Séance C · 30 min</span></a></div></div>
-<p class="note">Chaque séance est dans l'agenda à 14h00, avec un rappel à 8h00 le matin et un autre 15 min avant. Touche une case pour aller à la séance.</p></div>
+/* ---------- type ---------- */
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--mut)}
+.title{font-size:40px;font-stretch:72%;letter-spacing:-.01em}
+.h2{font-size:24px;font-stretch:75%;margin:34px 0 12px}
+.lead{color:var(--mut);margin-top:8px}
+.muted{color:var(--mut)} .dim{color:var(--dim)}
+.small{font-size:14px}
 
-<div class="box" id="regles"><h2>🎯 Les règles du jeu</h2><ul>
-<li><b>Technique d'abord</b> : chaque rep contrôlée (2 s pour descendre). Finis chaque série en pouvant encore faire 2–3 reps.</li>
-<li><b>Progression</b> : quand tu atteins le haut de la fourchette sur toutes les séries, passe à la version plus dure (support plus bas, amplitude plus grande, +5 s).</li>
-<li><b>Cheville</b> : « genou au mur » à chaque séance + 2 min les jours off (en te brossant les dents, par exemple). Talons surélevés pour les squats en attendant.</li>
-<li><b>Version courte (20 min)</b> : échauffement 3 min, 2 séries au lieu de 3 (2 tours de circuit au lieu de 4), retour au calme 2 min.</li>
-<li><b>Douleur articulaire vive</b> (≠ brûlure musculaire) : on arrête l'exercice.</li>
-</ul></div>
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 22px;border-radius:999px;font-weight:700;font-size:16.5px;text-decoration:none;
+  transition:transform .15s var(--ease),background .2s,opacity .2s;user-select:none}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--lime);color:var(--lime-ink)}
+.btn-ghost{background:var(--s2);color:var(--ink)}
+.btn-block{width:100%}
+.btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.icon-btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--s2);transition:transform .15s var(--ease),background .2s}
+.icon-btn:active{transform:scale(.92)}
+.icon-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.back{display:inline-flex;align-items:center;gap:4px;min-height:44px;color:var(--mut);text-decoration:none;font-weight:600;margin:-6px 0 6px -4px}
+.back svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}
 
-<div class="box"><h2>🍽️ Ce qui fait 70 % du résultat (hors séances)</h2><ul>
-<li><b>Calories</b> : léger déficit d'environ 300 kcal sous ta dépense journalière. Pas plus : en recomposition, un gros déficit fait perdre du muscle.</li><li><b>Protéines</b> : environ 1,7–1,9 g par kg de poids de corps et par jour, réparties sur 3–4 repas (œufs, légumineuses, poisson, volaille, skyr, tofu…).</li>
-<li><b>Pas</b> : 7 000 à 10 000 par jour.</li>
-<li><b>Sommeil</b> : 7 h+ ; c'est là que le muscle se construit.</li>
-<li><b>Mesure</b> : balance 1×/semaine, même jour, au réveil, à jeun. Les impédancemètres varient de ±2–3 % : regarde la tendance sur 4 semaines, pas un chiffre isolé. Le tour de taille (au nombril) est un bon complément.</li>
-</ul></div>
+/* ---------- today ---------- */
+.today-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:18px}
+.hero{position:relative;border-radius:24px;padding:22px 20px 20px;background:var(--s1);overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(120% 90% at 100% 0%,color-mix(in oklab,var(--c) 28%,transparent),transparent 60%)}
+.hero .k{font-size:110px;line-height:.8;font-weight:900;font-stretch:62%;color:var(--c);position:absolute;right:16px;top:14px;opacity:.95}
+.hero h2{font-size:34px;font-stretch:72%;max-width:75%;margin:10px 0 6px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:6px 14px;color:var(--mut);font-size:14.5px;margin-bottom:18px}
+.hero .meta b{color:var(--ink);font-weight:700}
+.hero .row{display:flex;gap:10px}
+.hero .row .btn-primary{flex:1}
+.hero.rest{--c:#7a808b}
+.done-badge{display:inline-flex;align-items:center;gap:8px;background:color-mix(in oklab,var(--ok) 16%,transparent);color:var(--ok);font-weight:700;border-radius:999px;padding:8px 14px;font-size:15px}
+.done-badge svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.6}
+.resume{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding:12px 14px;border-radius:var(--r-s);background:var(--s2);font-size:14.5px}
 
-<div class="box" id="optimiser"><h2>🚀 Pour optimiser au maximum</h2><ul>
-<li><b>Les pas, c'est l'arme n°1 contre le gras</b> : vise 8 000 pas par jour. Une marche de 20 min après le dîner aide aussi la glycémie et le sommeil.</li>
-<li><b>Protéines : environ 140 g par jour</b>. Si tu en manques, rattrape-toi avec un skyr ou un shaker. C'est ce qui protège ton muscle.</li>
-<li><b>Sommeil : 7 h 30.</b> Moins de 6 h, et le corps perd du muscle plutôt que du gras, avec plus de fringales.</li>
-<li><b>Créatine monohydrate, 3–5 g par jour</b> : le complément le plus étudié pour la force et le muscle. Pas cher, sans danger chez l'adulte en bonne santé, à prendre tous les jours dans de l'eau. Optionnel, mais efficace.</li>
-<li><b>Note tes séances</b> (reps faites, version de l'exercice). Si tu progresses, ça marche. Sinon, il faut ajuster.</li>
-<li><b>Mesure-toi chaque semaine</b> : balance à jeun, tour de taille au nombril, et une photo de face et de profil toutes les 2 semaines. Le miroir et la taille comptent plus que le poids.</li>
-<li><b>Investis dans des élastiques de résistance (≈ 20–25 €)</b> : ils rendent le tirage et les jambes bien plus efficaces. C'est le meilleur achat après ton tapis.</li>
-<li><b>Règle des 2 jours</b> : tu peux rater une séance, jamais deux de suite. Une séance de 10 min vaut mieux que zéro.</li>
-<li><b>Les jours de repos</b> : marche, plus 5 min de mobilité de cheville et de hanches.</li>
-</ul></div>
-<section class="session" id="seance-A" style="--c:#e76f51">
-  <div class="shead"><span class="badge">A</span><div><h2>Lundi — Force — Jambes &amp; Poussée</h2>
-  <p class="fmt">3 séries de chaque exercice (2 en version courte). Repos 60 s entre les séries.</p></div></div>
-  <h3>1 · Échauffement (5 min — 3 min en version courte)</h3>
-  <div class="grid"><div class="ex">
-  <button class="thumb" data-vid="y39PrKY_4JM" aria-label="Lire la vidéo Chat-vache">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/y39PrKY_4JM/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Chat-vache</h4><span class="dose">8 respirations</span></div>
-    <p>À quatre pattes : inspire en creusant le dos (regard devant), expire en arrondissant (menton vers la poitrine). Lent, au rythme de la respiration.</p>
-    <p class="tip">💡 Réveille la colonne avant tout le reste.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=y39PrKY_4JM" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div><div class="ex">
-  <button class="thumb" data-vid="ElrpduJn92Y" aria-label="Lire la vidéo Genou au mur (mobilité cheville)">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/ElrpduJn92Y/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Genou au mur (mobilité cheville)</h4><span class="dose">10 / côté</span></div>
-    <p>Face au mur, un pied à ~10 cm. Avance le genou pour toucher le mur SANS décoller le talon. 2 s en avant, retour. Recule le pied quand c&#x27;est facile.</p>
-    <p class="tip">💡 C&#x27;est TON exercice clé : à faire à chaque séance, et même les jours off. Mesure la distance pied-mur chaque semaine pour voir le progrès.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=ElrpduJn92Y" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div><div class="ex">
-  <button class="thumb" data-vid="OUgsJ8-Vi0E" aria-label="Lire la vidéo Pont fessier">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/OUgsJ8-Vi0E/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Pont fessier</h4><span class="dose">10</span></div>
-    <p>Sur le dos, pieds à plat, genoux pliés. Pousse dans les talons, serre les fessiers, monte jusqu&#x27;à l&#x27;alignement épaules-hanches-genoux. 1 s en haut, descente contrôlée.</p>
-    <p class="tip">💡 Ne cambre pas : c&#x27;est le fessier qui monte, pas le bas du dos.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=OUgsJ8-Vi0E" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div><div class="ex simple"><div class="exbody"><b>Cercles de bras + rotations de hanches : 30 s</b></div></div></div>
-  <h3>2 · Corps de séance (~20 min — ~13 min en version courte)</h3>
-  <div class="grid"><div class="ex">
-  <button class="thumb" data-vid="AVOS2JYsgrs" aria-label="Lire la vidéo Squat sur chaise">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/AVOS2JYsgrs/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Squat sur chaise</h4><span class="dose">10–12</span></div>
-    <p>Debout devant une chaise solide, pieds largeur d&#x27;épaules, pointes légèrement ouvertes. Hanches en arrière, effleure la chaise (sans s&#x27;affaler), remonte en poussant dans le sol.</p>
-    <p class="tip">💡 Cheville raide : glisse un livre ou le tapis plié sous les TALONS, et écarte un peu plus les pieds. Ça rend le squat beaucoup plus facile et propre.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=AVOS2JYsgrs" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div>
-<div class="ex">
-  <button class="thumb" data-vid="cfns5VDVVvk" aria-label="Lire la vidéo Pompes inclinées">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/cfns5VDVVvk/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Pompes inclinées</h4><span class="dose">8–12</span></div>
-    <p>Mains sur un plan de travail / table / rebord de canapé. Corps gainé et droit de la tête aux talons, coudes à ~45° du corps, poitrine vers le support.</p>
-    <p class="tip">💡 Plus le support est bas, plus c&#x27;est dur. Semaine 3-4 : descends d&#x27;un cran (chaise, puis sol).</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=cfns5VDVVvk" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div>
-<div class="ex">
-  <button class="thumb" data-vid="REflwhg0jNs" aria-label="Lire la vidéo Fente statique (split squat)">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/REflwhg0jNs/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Fente statique (split squat)</h4><span class="dose">8 / jambe</span></div>
-    <p>Un grand pas en avant, pied arrière sur la pointe. Descends verticalement, genou arrière vers le sol, buste droit. Remonte. Toutes les reps d&#x27;un côté, puis l&#x27;autre.</p>
-    <p class="tip">💡 Amplitude réduite au début. Tiens-toi à un mur ou une chaise pour l&#x27;équilibre si besoin.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=REflwhg0jNs" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div>
-<div class="ex">
-  <button class="thumb" data-vid="OUgsJ8-Vi0E" aria-label="Lire la vidéo Pont fessier">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/OUgsJ8-Vi0E/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Pont fessier</h4><span class="dose">15</span></div>
-    <p>Sur le dos, pieds à plat, genoux pliés. Pousse dans les talons, serre les fessiers, monte jusqu&#x27;à l&#x27;alignement épaules-hanches-genoux. 1 s en haut, descente contrôlée.</p>
-    <p class="tip">💡 Ne cambre pas : c&#x27;est le fessier qui monte, pas le bas du dos.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=OUgsJ8-Vi0E" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div>
-<div class="ex">
-  <button class="thumb" data-vid="UBa7wBucN-4" aria-label="Lire la vidéo Dead bug">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/UBa7wBucN-4/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Dead bug</h4><span class="dose">8 / côté</span></div>
-    <p>Sur le dos, bras vers le plafond, genoux à 90°. Bas du dos COLLÉ au sol, tends un bras et la jambe opposée lentement, reviens, change.</p>
-    <p class="tip">💡 Si le dos décolle, réduis l&#x27;amplitude.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=UBa7wBucN-4" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div>
-<div class="ex">
-  <button class="thumb" data-vid="mwlp75MS6Rg" aria-label="Lire la vidéo Gainage planche">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/mwlp75MS6Rg/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Gainage planche</h4><span class="dose">30 s</span></div>
-    <p>Sur les avant-bras, coudes sous les épaules, corps droit, fessiers et abdos serrés. Respire normalement.</p>
-    <p class="tip">💡 Mieux vaut 20 s parfaites que 60 s affaissées.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=mwlp75MS6Rg" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div></div>
-  <h3>3 · Retour au calme (3 min)</h3>
-  <div class="grid"><div class="ex">
-  <button class="thumb" data-vid="ElrpduJn92Y" aria-label="Lire la vidéo Genou au mur (mobilité cheville)">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/ElrpduJn92Y/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Genou au mur (mobilité cheville)</h4><span class="dose">Tenir 30 s / côté en fin d&#x27;amplitude</span></div>
-    <p>Face au mur, un pied à ~10 cm. Avance le genou pour toucher le mur SANS décoller le talon. 2 s en avant, retour. Recule le pied quand c&#x27;est facile.</p>
-    <p class="tip">💡 C&#x27;est TON exercice clé : à faire à chaque séance, et même les jours off. Mesure la distance pied-mur chaque semaine pour voir le progrès.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=ElrpduJn92Y" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div><div class="ex simple"><div class="exbody"><b>Étirement mollet contre le mur genou tendu : 30 s / côté</b></div></div><div class="ex simple"><div class="exbody"><b>Posture de l&#x27;enfant sur le tapis : 1 min de respiration lente</b></div></div></div>
-</section><section class="session" id="seance-B" style="--c:#2a9d8f">
-  <div class="shead"><span class="badge">B</span><div><h2>Mercredi — Force — Tirage, Dos &amp; Posture</h2>
-  <p class="fmt">3 séries de chaque exercice (2 en version courte). Repos 60 s entre les séries.</p></div></div>
-  <h3>1 · Échauffement (5 min — 3 min en version courte)</h3>
-  <div class="grid"><div class="ex">
-  <button class="thumb" data-vid="y39PrKY_4JM" aria-label="Lire la vidéo Chat-vache">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/y39PrKY_4JM/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Chat-vache</h4><span class="dose">8 respirations</span></div>
-    <p>À quatre pattes : inspire en creusant le dos (regard devant), expire en arrondissant (menton vers la poitrine). Lent, au rythme de la respiration.</p>
-    <p class="tip">💡 Réveille la colonne avant tout le reste.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=y39PrKY_4JM" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div><div class="ex">
-  <button class="thumb" data-vid="ElrpduJn92Y" aria-label="Lire la vidéo Genou au mur (mobilité cheville)">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/ElrpduJn92Y/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Genou au mur (mobilité cheville)</h4><span class="dose">10 / côté</span></div>
-    <p>Face au mur, un pied à ~10 cm. Avance le genou pour toucher le mur SANS décoller le talon. 2 s en avant, retour. Recule le pied quand c&#x27;est facile.</p>
-    <p class="tip">💡 C&#x27;est TON exercice clé : à faire à chaque séance, et même les jours off. Mesure la distance pied-mur chaque semaine pour voir le progrès.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=ElrpduJn92Y" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div><div class="ex">
-  <button class="thumb" data-vid="OUgsJ8-Vi0E" aria-label="Lire la vidéo Pont fessier">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/OUgsJ8-Vi0E/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Pont fessier</h4><span class="dose">10</span></div>
-    <p>Sur le dos, pieds à plat, genoux pliés. Pousse dans les talons, serre les fessiers, monte jusqu&#x27;à l&#x27;alignement épaules-hanches-genoux. 1 s en haut, descente contrôlée.</p>
-    <p class="tip">💡 Ne cambre pas : c&#x27;est le fessier qui monte, pas le bas du dos.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=OUgsJ8-Vi0E" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div><div class="ex simple"><div class="exbody"><b>Cercles de bras + rotations de hanches : 30 s</b></div></div></div>
-  <h3>2 · Corps de séance (~20 min — ~13 min en version courte)</h3>
-  <div class="grid"><div class="ex">
-  <button class="thumb" data-vid="61zbhuRiwQg" aria-label="Lire la vidéo Good morning (charnière de hanche)">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/61zbhuRiwQg/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Good morning (charnière de hanche)</h4><span class="dose">12</span></div>
-    <p>Debout, mains sur la tête ou croisées sur la poitrine, genoux légèrement fléchis. Pousse les fesses en arrière, buste qui s&#x27;incline dos PLAT, jusqu&#x27;à étirement des ischios. Remonte en serrant les fessiers.</p>
-    <p class="tip">💡 Aucune contrainte sur la cheville : parfait pour toi.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=61zbhuRiwQg" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div>
-<div class="ex">
-  <button class="thumb" data-vid="EIFEKZe4Wm8" aria-label="Lire la vidéo Rowing inversé sous une table">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/EIFEKZe4Wm8/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Rowing inversé sous une table</h4><span class="dose">8–10</span></div>
-    <p>Allongé sous une table TRÈS solide, mains sur le bord. Corps gainé, tire la poitrine vers la table, redescends lentement.</p>
-    <p class="tip">💡 Vérifie que la table ne bascule pas ! Plus facile : genoux pliés. Alternative : serviette dans une porte fermée (côté charnières), en tirant le corps vers la porte.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=EIFEKZe4Wm8" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div>
-<div class="ex">
-  <button class="thumb" data-vid="7pkeQFzJR9g" aria-label="Lire la vidéo Fente arrière">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/7pkeQFzJR9g/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Fente arrière</h4><span class="dose">8 / jambe</span></div>
-    <p>Debout, recule une jambe, descends genou arrière vers le sol, revient en poussant sur le talon avant. Alterne.</p>
-    <p class="tip">💡 La fente ARRIÈRE sollicite beaucoup moins la cheville que la fente avant.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=7pkeQFzJR9g" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div>
-<div class="ex">
-  <button class="thumb" data-vid="QdGTI4Lshg4" aria-label="Lire la vidéo Y-T-W au sol">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/QdGTI4Lshg4/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Y-T-W au sol</h4><span class="dose">6 cycles</span></div>
-    <p>À plat ventre, front sur le tapis. Lève les bras en Y (pouces vers le ciel), puis en T, puis en W (coudes pliés, omoplates serrées). 2 s par position.</p>
-    <p class="tip">💡 Excellent pour la posture et les épaules. Petit mouvement, gros effet.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=QdGTI4Lshg4" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div>
-<div class="ex">
-  <button class="thumb" data-vid="z6PJMT2y8GQ" aria-label="Lire la vidéo Superman">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/z6PJMT2y8GQ/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Superman</h4><span class="dose">10</span></div>
-    <p>À plat ventre, bras tendus devant. Décolle bras, poitrine et jambes ensemble, 2 s en haut, redescends.</p>
-    <p class="tip">💡 Regard vers le sol pour ne pas casser la nuque.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=z6PJMT2y8GQ" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div>
-<div class="ex">
-  <button class="thumb" data-vid="N_s9em1xTqU" aria-label="Lire la vidéo Gainage latéral">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/N_s9em1xTqU/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Gainage latéral</h4><span class="dose">20 s / côté</span></div>
-    <p>Sur un avant-bras, pieds empilés (ou genoux au sol pour simplifier), hanches hautes, corps aligné.</p>
-    <p class="tip">💡 Version genoux au sol en semaine 1-2.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=N_s9em1xTqU" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div></div>
-  <h3>3 · Retour au calme (3 min)</h3>
-  <div class="grid"><div class="ex">
-  <button class="thumb" data-vid="ElrpduJn92Y" aria-label="Lire la vidéo Genou au mur (mobilité cheville)">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/ElrpduJn92Y/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Genou au mur (mobilité cheville)</h4><span class="dose">Tenir 30 s / côté en fin d&#x27;amplitude</span></div>
-    <p>Face au mur, un pied à ~10 cm. Avance le genou pour toucher le mur SANS décoller le talon. 2 s en avant, retour. Recule le pied quand c&#x27;est facile.</p>
-    <p class="tip">💡 C&#x27;est TON exercice clé : à faire à chaque séance, et même les jours off. Mesure la distance pied-mur chaque semaine pour voir le progrès.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=ElrpduJn92Y" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div><div class="ex simple"><div class="exbody"><b>Étirement mollet contre le mur genou tendu : 30 s / côté</b></div></div><div class="ex simple"><div class="exbody"><b>Posture de l&#x27;enfant sur le tapis : 1 min de respiration lente</b></div></div></div>
-</section><section class="session" id="seance-C" style="--c:#7b5cd6">
-  <div class="shead"><span class="badge">C</span><div><h2>Vendredi — Circuit cardio-métabolique</h2>
-  <p class="fmt">Circuit : 40 s d&#x27;effort / 20 s de repos, enchaîne les 6 exercices = 1 tour. 4 tours (2 en version courte), 1 min de pause entre les tours.</p></div></div>
-  <h3>1 · Échauffement (5 min — 3 min en version courte)</h3>
-  <div class="grid"><div class="ex">
-  <button class="thumb" data-vid="y39PrKY_4JM" aria-label="Lire la vidéo Chat-vache">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/y39PrKY_4JM/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Chat-vache</h4><span class="dose">8 respirations</span></div>
-    <p>À quatre pattes : inspire en creusant le dos (regard devant), expire en arrondissant (menton vers la poitrine). Lent, au rythme de la respiration.</p>
-    <p class="tip">💡 Réveille la colonne avant tout le reste.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=y39PrKY_4JM" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div><div class="ex">
-  <button class="thumb" data-vid="ElrpduJn92Y" aria-label="Lire la vidéo Genou au mur (mobilité cheville)">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/ElrpduJn92Y/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Genou au mur (mobilité cheville)</h4><span class="dose">10 / côté</span></div>
-    <p>Face au mur, un pied à ~10 cm. Avance le genou pour toucher le mur SANS décoller le talon. 2 s en avant, retour. Recule le pied quand c&#x27;est facile.</p>
-    <p class="tip">💡 C&#x27;est TON exercice clé : à faire à chaque séance, et même les jours off. Mesure la distance pied-mur chaque semaine pour voir le progrès.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=ElrpduJn92Y" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div><div class="ex">
-  <button class="thumb" data-vid="OUgsJ8-Vi0E" aria-label="Lire la vidéo Pont fessier">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/OUgsJ8-Vi0E/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Pont fessier</h4><span class="dose">10</span></div>
-    <p>Sur le dos, pieds à plat, genoux pliés. Pousse dans les talons, serre les fessiers, monte jusqu&#x27;à l&#x27;alignement épaules-hanches-genoux. 1 s en haut, descente contrôlée.</p>
-    <p class="tip">💡 Ne cambre pas : c&#x27;est le fessier qui monte, pas le bas du dos.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=OUgsJ8-Vi0E" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div><div class="ex simple"><div class="exbody"><b>Cercles de bras + rotations de hanches : 30 s</b></div></div></div>
-  <h3>2 · Corps de séance (~20 min — ~13 min en version courte)</h3>
-  <div class="grid"><div class="ex">
-  <button class="thumb" data-vid="AVOS2JYsgrs" aria-label="Lire la vidéo Squat sur chaise">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/AVOS2JYsgrs/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Squat sur chaise</h4><span class="dose">40 s</span></div>
-    <p>Debout devant une chaise solide, pieds largeur d&#x27;épaules, pointes légèrement ouvertes. Hanches en arrière, effleure la chaise (sans s&#x27;affaler), remonte en poussant dans le sol.</p>
-    <p class="tip">💡 Cheville raide : glisse un livre ou le tapis plié sous les TALONS, et écarte un peu plus les pieds. Ça rend le squat beaucoup plus facile et propre.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=AVOS2JYsgrs" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div>
-<div class="ex">
-  <button class="thumb" data-vid="cfns5VDVVvk" aria-label="Lire la vidéo Pompes inclinées">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/cfns5VDVVvk/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Pompes inclinées</h4><span class="dose">40 s</span></div>
-    <p>Mains sur un plan de travail / table / rebord de canapé. Corps gainé et droit de la tête aux talons, coudes à ~45° du corps, poitrine vers le support.</p>
-    <p class="tip">💡 Plus le support est bas, plus c&#x27;est dur. Semaine 3-4 : descends d&#x27;un cran (chaise, puis sol).</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=cfns5VDVVvk" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div>
-<div class="ex">
-  <button class="thumb" data-vid="cnyTQDSE884" aria-label="Lire la vidéo Mountain climbers (lents)">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/cnyTQDSE884/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Mountain climbers (lents)</h4><span class="dose">40 s</span></div>
-    <p>En position de pompe, ramène un genou vers la poitrine, puis l&#x27;autre. Rythme contrôlé, hanches basses.</p>
-    <p class="tip">💡 Mains sur une chaise / le canapé pour une version plus douce.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=cnyTQDSE884" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div>
-<div class="ex">
-  <button class="thumb" data-vid="OUgsJ8-Vi0E" aria-label="Lire la vidéo Pont fessier">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/OUgsJ8-Vi0E/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Pont fessier</h4><span class="dose">40 s</span></div>
-    <p>Sur le dos, pieds à plat, genoux pliés. Pousse dans les talons, serre les fessiers, monte jusqu&#x27;à l&#x27;alignement épaules-hanches-genoux. 1 s en haut, descente contrôlée.</p>
-    <p class="tip">💡 Ne cambre pas : c&#x27;est le fessier qui monte, pas le bas du dos.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=OUgsJ8-Vi0E" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div>
-<div class="ex">
-  <button class="thumb" data-vid="7pkeQFzJR9g" aria-label="Lire la vidéo Fente arrière">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/7pkeQFzJR9g/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Fente arrière</h4><span class="dose">40 s alterné</span></div>
-    <p>Debout, recule une jambe, descends genou arrière vers le sol, revient en poussant sur le talon avant. Alterne.</p>
-    <p class="tip">💡 La fente ARRIÈRE sollicite beaucoup moins la cheville que la fente avant.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=7pkeQFzJR9g" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div>
-<div class="ex">
-  <button class="thumb" data-vid="wiFNA3sqjCA" aria-label="Lire la vidéo Bird dog">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/wiFNA3sqjCA/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Bird dog</h4><span class="dose">40 s</span></div>
-    <p>À quatre pattes, tends bras droit + jambe gauche, dos plat comme une table, 2 s, reviens. Alterne.</p>
-    <p class="tip">💡 Imagine un verre d&#x27;eau posé sur ton dos.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=wiFNA3sqjCA" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div></div>
-  <h3>3 · Retour au calme (3 min)</h3>
-  <div class="grid"><div class="ex">
-  <button class="thumb" data-vid="ElrpduJn92Y" aria-label="Lire la vidéo Genou au mur (mobilité cheville)">
-    <img loading="lazy" decoding="async" width="480" height="360" src="https://i.ytimg.com/vi/ElrpduJn92Y/mqdefault.jpg" alt="">
-    <span class="play">▶</span>
-  </button>
-  <div class="exbody">
-    <div class="exhead"><h4>Genou au mur (mobilité cheville)</h4><span class="dose">Tenir 30 s / côté en fin d&#x27;amplitude</span></div>
-    <p>Face au mur, un pied à ~10 cm. Avance le genou pour toucher le mur SANS décoller le talon. 2 s en avant, retour. Recule le pied quand c&#x27;est facile.</p>
-    <p class="tip">💡 C&#x27;est TON exercice clé : à faire à chaque séance, et même les jours off. Mesure la distance pied-mur chaque semaine pour voir le progrès.</p>
-    <a class="yt" href="https://www.youtube.com/watch?v=ElrpduJn92Y" target="_blank" rel="noopener">Ouvrir sur YouTube ↗</a>
-  </div>
-</div><div class="ex simple"><div class="exbody"><b>Étirement mollet contre le mur genou tendu : 30 s / côté</b></div></div><div class="ex simple"><div class="exbody"><b>Posture de l&#x27;enfant sur le tapis : 1 min de respiration lente</b></div></div></div>
-</section>
-<p class="sub" style="margin-top:40px">Clique sur une miniature pour lancer la vidéo de démonstration ici même. Vidéos : NASM, Yoga With Adriene, Horton Barbell, Airrosti, etc.</p>
-</div>
-<script>
-document.querySelectorAll('.thumb').forEach(b=>b.addEventListener('click',()=>{
-  const f=document.createElement('iframe');
-  f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.vid+'?autoplay=1&rel=0&playsinline=1&modestbranding=1';
-  f.allow='autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen=true;
-  b.replaceWith(f);
-}));
-</script></body></html>
+.quick{display:flex;align-items:center;gap:14px;margin-top:12px;padding:14px 16px;border-radius:var(--r);background:var(--s1);text-decoration:none;transition:background .2s}
+.quick:active{background:var(--s2)}
+.quick .ic{width:44px;height:44px;border-radius:12px;background:var(--s3);display:grid;place-items:center;flex:none}
+.quick .ic svg{width:22px;height:22px;stroke:var(--lime);fill:none;stroke-width:2}
+.quick b{display:block} .quick small{color:var(--mut)}
+.quick .chev{margin-left:auto;color:var(--dim)}
+
+/* progress strip */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px}
+.strip .wk{display:flex;flex-direction:column;gap:6px}
+.strip .wk span{font-size:11.5px;color:var(--dim);font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.strip .dots{display:flex;gap:5px}
+.dot{flex:1;height:30px;border-radius:8px;background:var(--s2);display:grid;place-items:center;font-size:12px;font-weight:800;color:var(--dim);font-stretch:75%;text-decoration:none;transition:transform .15s}
+.dot:active{transform:scale(.94)}
+.dot.past{background:var(--s1);color:#4d525b}
+.dot.today{box-shadow:inset 0 0 0 2px var(--c);color:var(--ink)}
+.dot.done{background:var(--c);color:#111}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1px;background:var(--line);border-radius:var(--r);overflow:hidden;margin-top:6px}
+.stats div{background:var(--s1);padding:12px 14px}
+.stats b{display:block;font-size:22px;font-stretch:75%}
+.stats small{color:var(--dim);font-size:12.5px}
+
+/* lists */
+.list{border-radius:var(--r);background:var(--s1);overflow:hidden}
+.li{display:flex;align-items:center;gap:14px;min-height:60px;padding:12px 16px;text-decoration:none;position:relative;transition:background .2s;width:100%;text-align:left}
+.li+.li::before{content:"";position:absolute;left:16px;right:0;top:0;height:1px;background:var(--line)}
+a.li:active,button.li:active{background:var(--s2)}
+.li .when{width:78px;flex:none;font-size:12.5px;color:var(--dim);font-weight:600;line-height:1.3}
+.li .main{flex:1;min-width:0}
+.li .main b{display:block;font-weight:600}
+.li .main small{color:var(--mut);font-size:13.5px}
+.li .chev{color:var(--dim);flex:none}
+.chev svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* ---------- sessions ---------- */
+.scards{display:grid;gap:12px}
+.scard{display:grid;grid-template-columns:64px 1fr auto;align-items:center;gap:14px;padding:16px;border-radius:var(--r);background:var(--s1);text-decoration:none;transition:background .2s,transform .15s var(--ease)}
+.scard:active{transform:scale(.985);background:var(--s2)}
+.scard .k{font-size:58px;line-height:.85;font-weight:900;font-stretch:62%;color:var(--c);text-align:center}
+.scard h3{font-size:22px;font-stretch:75%}
+.scard p{color:var(--mut);font-size:14px;margin-top:2px}
+.weeks{display:grid;gap:10px}
+.week{padding:14px 16px;border-radius:var(--r);background:var(--s1)}
+.week.cur{box-shadow:inset 0 0 0 1px var(--line),0 0 0 1px color-mix(in oklab,var(--lime) 30%,transparent)}
+.week header{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.week header b{font-size:17px}
+.week p{color:var(--mut);font-size:14px;margin:4px 0 10px}
+.week .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.slot{display:block;text-decoration:none;padding:9px 10px;border-radius:10px;background:var(--s2);font-size:13.5px;line-height:1.3;transition:transform .15s}
+.slot:active{transform:scale(.96)}
+.slot b{display:flex;justify-content:space-between;align-items:center;font-size:14.5px}
+.slot b i{font-style:normal;color:var(--c);font-weight:900;font-stretch:72%;font-size:17px}
+.slot small{color:var(--dim)}
+.slot.done{background:color-mix(in oklab,var(--c) 22%,var(--s2))}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--s3);color:var(--mut);white-space:nowrap}
+.tag.lime{background:color-mix(in oklab,var(--lime) 18%,transparent);color:var(--lime)}
+
+/* session detail */
+.shero{padding:4px 0 6px}
+.shero .k{font-size:84px;line-height:.8;font-weight:900;font-stretch:62%;color:var(--c);margin:6px 0 10px}
+.seg{display:inline-grid;grid-template-columns:1fr 1fr;background:var(--s1);border-radius:999px;padding:4px;margin:18px 0 10px;position:relative;width:100%;max-width:340px}
+.seg button{position:relative;z-index:1;min-height:42px;border-radius:999px;font-weight:700;font-size:15px;color:var(--mut);transition:color .25s}
+.seg button[aria-pressed="true"]{color:var(--lime-ink)}
+.seg .pill{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:var(--lime);transition:transform .32s var(--ease)}
+.seg[data-v="short"] .pill{transform:translateX(100%)}
+.phase{margin-top:26px}
+.phase h2{font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin-bottom:10px;display:flex;justify-content:space-between}
+.exi{border-radius:var(--r);background:var(--s1);margin-bottom:8px;overflow:hidden;interpolate-size:allow-keywords}
+.exi summary{list-style:none;display:flex;align-items:center;gap:14px;padding:10px 14px 10px 10px;cursor:pointer;min-height:68px}
+.exi summary::-webkit-details-marker{display:none}
+.exi .th{width:84px;aspect-ratio:16/9;border-radius:10px;background:var(--s3) center/cover no-repeat;flex:none}
+.exi .nm{flex:1;min-width:0}
+.exi .nm b{display:block;font-weight:600;line-height:1.25}
+.exi .dz{font-weight:800;font-stretch:75%;font-size:17px;color:var(--ink);white-space:nowrap}
+.exi .chev{transition:transform .3s var(--ease)}
+.exi[open] .chev{transform:rotate(90deg)}
+.exi::details-content{block-size:0;overflow:hidden;transition:block-size .35s var(--ease),content-visibility .35s allow-discrete}
+.exi[open]::details-content{block-size:auto}
+.exi .body{padding:2px 14px 16px}
+.exi .body p{font-size:15px;margin-top:10px}
+.tip{color:var(--warn)}
+.cta{position:fixed;z-index:15;left:0;right:0;bottom:calc(var(--tab) + var(--safe-b));padding:12px 18px;background:linear-gradient(transparent,var(--bg) 35%)}
+.cta div{max-width:604px;margin:0 auto}
+
+/* video */
+.vid{position:relative;display:block;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000 center/cover no-repeat;margin-top:12px}
+.vid::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.55))}
+.vid .pl{position:absolute;z-index:1;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;background:rgba(11,12,14,.72);display:grid;place-items:center;transition:transform .2s var(--ease),background .2s}
+.vid .pl svg{width:26px;height:26px;fill:var(--lime);margin-left:4px}
+.vid:active .pl{transform:scale(.92)}
+.vid .lb{position:absolute;z-index:1;left:12px;bottom:10px;font-size:12.5px;font-weight:600;color:#ddd}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt{display:inline-block;margin-top:8px;font-size:13px;color:var(--dim)}
+
+/* ---------- menu ---------- */
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin:16px 0 14px}
+.days::-webkit-scrollbar{display:none}
+.days button{min-width:0;min-height:58px;border-radius:14px;background:var(--s1);display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;font-size:15px;transition:background .2s,color .2s,transform .15s}
+.days button small{font-size:10.5px;font-weight:700;color:var(--dim);letter-spacing:.05em}
+.days button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.days button[aria-pressed="true"] small{color:#555}
+.days button.is-today:not([aria-pressed="true"]){box-shadow:inset 0 0 0 1.5px var(--line)}
+.days button:active{transform:scale(.94)}
+.totals{display:flex;gap:22px;margin:4px 0 14px;align-items:flex-end}
+.totals b{font-size:28px;font-stretch:72%;font-weight:800}
+.totals span{display:block;color:var(--mut);font-size:13px;margin-top:2px}
+.plate{display:grid;grid-template-columns:2fr 1fr 1fr;gap:6px;margin-top:12px;height:86px}
+.plate div{border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;justify-content:flex-end;font-size:13px;font-weight:600}
+.plate div b{font-size:19px;font-stretch:72%}
+.rules{display:grid;gap:1px;background:var(--line);border-radius:var(--r);overflow:hidden}
+.rules div{background:var(--s1);padding:14px 16px}
+.rules b{display:block;margin-bottom:2px}
+.rules p{color:var(--mut);font-size:14.5px}
+.bul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.bul li{position:relative;padding-left:22px;color:var(--mut);font-size:15px}
+.bul li::before{content:"";position:absolute;left:4px;top:.62em;width:7px;height:7px;border-radius:2px;background:var(--lime)}
+.rgroup h3{font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:24px 0 10px}
+.mac{font-weight:700;font-stretch:80%;white-space:nowrap;text-align:right;font-size:14px}
+.mac small{display:block;color:var(--dim);font-weight:600}
+
+/* sheet */
+.sheet{position:fixed;inset:0;z-index:40;display:none}
+.sheet.open{display:block}
+.sheet .bd{position:absolute;inset:0;background:rgba(0,0,0,.6);opacity:0;transition:opacity .3s}
+.sheet.show .bd{opacity:1}
+.sheet .pn{position:absolute;left:0;right:0;bottom:0;max-width:640px;margin:0 auto;max-height:92dvh;overflow:auto;overscroll-behavior:contain;background:var(--s1);border-radius:24px 24px 0 0;
+  padding:10px 20px calc(24px + var(--safe-b));transform:translateY(100%);transition:transform .38s var(--ease)}
+.sheet.show .pn{transform:none}
+.grab{width:40px;height:5px;border-radius:9px;background:var(--s3);margin:0 auto 14px}
+.sheet .x{position:sticky;top:0;float:right;margin:-2px -6px 0 0;z-index:2}
+.rhead h2{font-size:30px;font-stretch:72%;margin:6px 50px 10px 0}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-radius:14px;overflow:hidden;margin:14px 0 20px}
+.facts div{background:var(--s2);padding:10px;text-align:center}
+.facts b{display:block;font-size:19px;font-stretch:75%}
+.facts small{font-size:11.5px;color:var(--dim)}
+.ing{margin:0;padding:0;list-style:none}
+.ing li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.steps{margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:12px;padding:10px 0;font-size:15.5px}
+.steps li::before{content:counter(s);width:30px;height:30px;border-radius:50%;background:var(--s3);display:grid;place-items:center;font-weight:800;font-size:14px}
+.sec-t{font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin:22px 0 6px}
+
+/* ---------- checklist ---------- */
+.ck{display:flex;align-items:center;gap:14px;min-height:54px;padding:8px 16px;position:relative;cursor:pointer;user-select:none}
+.ck+.ck::before{content:"";position:absolute;left:52px;right:0;top:0;height:1px;background:var(--line)}
+.ck input{position:absolute;opacity:0;pointer-events:none}
+.ck .bx{width:24px;height:24px;border-radius:8px;box-shadow:inset 0 0 0 2px var(--s3);flex:none;display:grid;place-items:center;transition:background .2s,box-shadow .2s}
+.ck .bx svg{width:16px;height:16px;stroke:var(--lime-ink);fill:none;stroke-width:3;stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .3s var(--ease) .05s}
+.ck input:checked+.bx{background:var(--lime);box-shadow:none}
+.ck input:checked+.bx svg{stroke-dashoffset:0}
+.ck span{transition:color .2s}
+.ck input:checked~span{color:var(--dim);text-decoration:line-through;text-decoration-color:var(--dim)}
+.ck input:focus-visible+.bx{outline:2px solid var(--lime);outline-offset:2px}
+.progress{height:6px;border-radius:9px;background:var(--s2);overflow:hidden;margin:12px 0 4px}
+.progress i{display:block;height:100%;background:var(--lime);border-radius:9px;transition:width .4s var(--ease)}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:6px}
+.linkbtn{color:var(--mut);font-weight:600;font-size:14px;min-height:44px;padding:0 4px}
+
+/* banner */
+.banner{display:flex;gap:12px;align-items:center;padding:12px 12px 12px 16px;border-radius:var(--r);background:var(--s1);margin-top:12px;animation:viewIn .4s var(--ease) both}
+.banner p{font-size:14px;color:var(--mut);flex:1}
+.banner b{color:var(--ink)}
+.toast{position:fixed;left:50%;bottom:calc(var(--tab) + var(--safe-b) + 18px);z-index:60;transform:translate(-50%,20px);opacity:0;background:var(--ink);color:var(--bg);font-weight:700;font-size:14.5px;padding:12px 18px;border-radius:999px;transition:transform .3s var(--ease),opacity .3s;pointer-events:none;white-space:nowrap}
+.toast.show{transform:translate(-50%,0);opacity:1}
+
+/* ---------- player ---------- */
+.player{position:fixed;inset:0;z-index:50;background:var(--bg);display:grid;grid-template-rows:auto 1fr auto;animation:playerIn .35s var(--ease) both}
+@keyframes playerIn{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:none}}
+.p-top{display:flex;align-items:center;gap:12px;padding:calc(var(--safe-t) + 10px) 16px 10px;max-width:640px;width:100%;margin:0 auto}
+.p-bar{flex:1;height:6px;border-radius:9px;background:var(--s2);overflow:hidden}
+.p-bar i{display:block;height:100%;background:var(--c,var(--lime));transition:width .4s var(--ease)}
+.p-count{font-size:13px;color:var(--mut);font-weight:700;font-variant-numeric:tabular-nums;min-width:44px;text-align:right}
+.p-body{overflow:auto;padding:6px 20px 16px;max-width:640px;width:100%;margin:0 auto}
+.p-step{animation:stepIn .34s var(--ease) both}
+.p-step.back-anim{animation-name:stepBack}
+@keyframes stepIn{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+@keyframes stepBack{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:none}}
+.p-phase{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.p-name{font-size:38px;font-stretch:70%;margin:10px 0 4px}
+.p-dose{font-size:64px;font-weight:900;font-stretch:65%;line-height:1;margin:6px 0 4px;color:var(--c,var(--lime))}
+.p-dose small{font-size:18px;font-weight:700;color:var(--mut);font-stretch:90%;margin-left:6px}
+.p-note{color:var(--mut);font-size:15px}
+.ring{position:relative;width:min(62vw,250px);aspect-ratio:1;margin:16px auto 6px}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:9}
+.ring .tr{stroke:var(--s2)}
+.ring .fg{stroke:var(--c,var(--lime));stroke-linecap:round;transition:stroke-dashoffset .12s linear}
+.ring .num{position:absolute;inset:0;display:grid;place-items:center;font-size:84px;font-weight:900;font-stretch:62%;font-variant-numeric:tabular-nums}
+.ring .num small{display:block;font-size:14px;font-weight:700;color:var(--mut);font-stretch:100%;text-align:center;margin-top:-6px}
+.ring.paused .num{opacity:.45}
+.ring.go .fg{animation:pulse 1s var(--ease) infinite}
+@keyframes pulse{50%{stroke-width:12}}
+.rest-k{text-align:center}
+.rest-k .p-name{font-size:52px}
+.nextup{display:flex;gap:12px;align-items:center;padding:12px;border-radius:var(--r);background:var(--s1);margin-top:14px;text-align:left}
+.nextup .th{width:96px;aspect-ratio:16/9;border-radius:10px;background:var(--s3) center/cover;flex:none}
+.p-how{margin-top:12px;border-radius:var(--r);background:var(--s1);padding:2px 16px;interpolate-size:allow-keywords}
+.p-how summary{list-style:none;min-height:48px;display:flex;align-items:center;justify-content:space-between;font-weight:600;cursor:pointer}
+.p-how summary::-webkit-details-marker{display:none}
+.p-how p{font-size:15px;padding-bottom:12px}
+.p-how::details-content{block-size:0;overflow:hidden;transition:block-size .3s var(--ease),content-visibility .3s allow-discrete}
+.p-how[open]::details-content{block-size:auto}
+.p-ctrl{display:grid;grid-template-columns:56px 1fr 56px;gap:12px;align-items:center;padding:12px 16px calc(14px + var(--safe-b));max-width:640px;width:100%;margin:0 auto;border-top:1px solid var(--line)}
+.p-ctrl .btn{min-height:60px;font-size:18px}
+.p-ctrl .icon-btn{width:56px;height:56px}
+.p-ctrl .icon-btn:disabled{opacity:.3}
+.p-sub{display:flex;justify-content:center;gap:10px;margin-top:4px}
+.end{min-height:100%;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:20px 4px}
+.end .chk{width:96px;height:96px;margin:0 auto 22px;border-radius:50%;background:var(--lime);display:grid;place-items:center;animation:pop .5s var(--ease) both}
+.end .chk svg{width:48px;height:48px;stroke:var(--lime-ink);fill:none;stroke-width:3.2;stroke-dasharray:40;stroke-dashoffset:40;animation:draw .5s var(--ease) .25s forwards}
+@keyframes pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+@keyframes draw{to{stroke-dashoffset:0}}
+.end h1{font-size:46px;font-stretch:70%}
+.end .row{display:grid;gap:10px;margin-top:28px}
+
+@media (min-width:700px){
+  .title{font-size:48px}
+  .p-name{font-size:46px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+</head><body>
+<main id="app" aria-live="polite"></main>
+<div class="tabs"></div>
+<noscript><p style="padding:24px">Active JavaScript pour utiliser le programme.</p></noscript>
+<script>window.D={"ex":{"catcow":{"n":"Chat-vache","v":"y39PrKY_4JM","how":"À quatre pattes : inspire en creusant le dos (regard devant), expire en arrondissant (menton vers la poitrine). Lent, au rythme de la respiration.","tip":"Réveille la colonne avant tout le reste."},"knee":{"n":"Genou au mur (mobilité cheville)","v":"ElrpduJn92Y","how":"Face au mur, un pied à ~10 cm. Avance le genou pour toucher le mur SANS décoller le talon. 2 s en avant, retour. Recule le pied quand c'est facile.","tip":"C'est TON exercice clé : à faire à chaque séance, et même les jours off. Mesure la distance pied-mur chaque semaine pour voir le progrès."},"bridge":{"n":"Pont fessier","v":"OUgsJ8-Vi0E","how":"Sur le dos, pieds à plat, genoux pliés. Pousse dans les talons, serre les fessiers, monte jusqu'à l'alignement épaules-hanches-genoux. 1 s en haut, descente contrôlée.","tip":"Ne cambre pas : c'est le fessier qui monte, pas le bas du dos."},"boxsquat":{"n":"Squat sur chaise","v":"AVOS2JYsgrs","how":"Debout devant une chaise solide, pieds largeur d'épaules, pointes légèrement ouvertes. Hanches en arrière, effleure la chaise (sans s'affaler), remonte en poussant dans le sol.","tip":"Cheville raide : glisse un livre ou le tapis plié sous les TALONS, et écarte un peu plus les pieds. Ça rend le squat beaucoup plus facile et propre."},"incline":{"n":"Pompes inclinées","v":"cfns5VDVVvk","how":"Mains sur un plan de travail / table / rebord de canapé. Corps gainé et droit de la tête aux talons, coudes à ~45° du corps, poitrine vers le support.","tip":"Plus le support est bas, plus c'est dur. Semaine 3-4 : descends d'un cran (chaise, puis sol)."},"pushup":{"n":"Pompes au sol (ou sur genoux)","v":"WDIpL0pjun0","how":"Mains un peu plus larges que les épaules, corps gainé, descente poitrine vers le sol, remontée en poussant le sol.","tip":"Si tu ne fais pas 6 propres : sur les genoux, ou retour aux pompes inclinées."},"splitsquat":{"n":"Fente statique (split squat)","v":"REflwhg0jNs","how":"Un grand pas en avant, pied arrière sur la pointe. Descends verticalement, genou arrière vers le sol, buste droit. Remonte. Toutes les reps d'un côté, puis l'autre.","tip":"Amplitude réduite au début. Tiens-toi à un mur ou une chaise pour l'équilibre si besoin."},"hinge":{"n":"Good morning (charnière de hanche)","v":"61zbhuRiwQg","how":"Debout, mains sur la tête ou croisées sur la poitrine, genoux légèrement fléchis. Pousse les fesses en arrière, buste qui s'incline dos PLAT, jusqu'à étirement des ischios. Remonte en serrant les fessiers.","tip":"Aucune contrainte sur la cheville : parfait pour toi."},"row":{"n":"Rowing inversé sous une table","v":"EIFEKZe4Wm8","how":"Allongé sous une table TRÈS solide, mains sur le bord. Corps gainé, tire la poitrine vers la table, redescends lentement.","tip":"Vérifie que la table ne bascule pas ! Plus facile : genoux pliés. Alternative : serviette dans une porte fermée (côté charnières), en tirant le corps vers la porte."},"rlunge":{"n":"Fente arrière","v":"7pkeQFzJR9g","how":"Debout, recule une jambe, descends genou arrière vers le sol, revient en poussant sur le talon avant. Alterne.","tip":"La fente ARRIÈRE sollicite beaucoup moins la cheville que la fente avant."},"ytw":{"n":"Y-T-W au sol","v":"QdGTI4Lshg4","how":"À plat ventre, front sur le tapis. Lève les bras en Y (pouces vers le ciel), puis en T, puis en W (coudes pliés, omoplates serrées). 2 s par position.","tip":"Excellent pour la posture et les épaules. Petit mouvement, gros effet."},"superman":{"n":"Superman","v":"z6PJMT2y8GQ","how":"À plat ventre, bras tendus devant. Décolle bras, poitrine et jambes ensemble, 2 s en haut, redescends.","tip":"Regard vers le sol pour ne pas casser la nuque."},"deadbug":{"n":"Dead bug","v":"UBa7wBucN-4","how":"Sur le dos, bras vers le plafond, genoux à 90°. Bas du dos COLLÉ au sol, tends un bras et la jambe opposée lentement, reviens, change.","tip":"Si le dos décolle, réduis l'amplitude."},"plank":{"n":"Gainage planche","v":"mwlp75MS6Rg","how":"Sur les avant-bras, coudes sous les épaules, corps droit, fessiers et abdos serrés. Respire normalement.","tip":"Mieux vaut 20 s parfaites que 60 s affaissées."},"sideplank":{"n":"Gainage latéral","v":"N_s9em1xTqU","how":"Sur un avant-bras, pieds empilés (ou genoux au sol pour simplifier), hanches hautes, corps aligné.","tip":"Version genoux au sol en semaine 1-2."},"birddog":{"n":"Bird dog","v":"wiFNA3sqjCA","how":"À quatre pattes, tends bras droit + jambe gauche, dos plat comme une table, 2 s, reviens. Alterne.","tip":"Imagine un verre d'eau posé sur ton dos."},"climber":{"n":"Mountain climbers (lents)","v":"cnyTQDSE884","how":"En position de pompe, ramène un genou vers la poitrine, puis l'autre. Rythme contrôlé, hanches basses.","tip":"Mains sur une chaise / le canapé pour une version plus douce."},"circles":{"n":"Cercles de bras & de hanches","v":"mwDgFY86zck","how":"Debout, grands cercles de bras vers l'avant puis vers l'arrière, puis mains sur les hanches et grands cercles du bassin dans les deux sens.","tip":"Amplitude progressive : petits cercles au début, de plus en plus grands."},"calf":{"n":"Étirement du mollet au mur","v":"f1HzSAuB-Vw","how":"Mains au mur, une jambe tendue derrière, talon au sol. Avance le bassin jusqu'à sentir l'étirement dans le mollet. Respire lentement.","tip":"Complément direct du travail de mobilité de cheville."},"child":{"n":"Posture de l'enfant","v":"kH12QrSGedM","how":"À genoux, fesses vers les talons, bras allongés devant, front sur le tapis. Respire profondément dans le dos.","tip":"Expire plus longtemps que tu n'inspires : le rythme cardiaque redescend plus vite."}},"warmup":[{"ex":"catcow","t":45,"note":"8 respirations lentes"},{"ex":"knee","r":"10 / côté"},{"ex":"bridge","r":"10"},{"ex":"circles","t":30}],"cooldown":[{"ex":"knee","t":30,"side":true,"note":"Tiens en fin d'amplitude"},{"ex":"calf","t":30,"side":true},{"ex":"child","t":60}],"sessions":{"A":{"title":"Jambes & Poussée","day":"Lundi","format":"3 séries par exercice · 60 s de repos","short_format":"2 séries par exercice · 60 s de repos","main":[{"ex":"boxsquat","r":"10–12"},{"ex":"incline","r":"8–12"},{"ex":"splitsquat","r":"8 / jambe"},{"ex":"bridge","r":"15"},{"ex":"deadbug","r":"8 / côté"},{"ex":"plank","t":30}]},"B":{"title":"Dos & Posture","day":"Mercredi","format":"3 séries par exercice · 60 s de repos","short_format":"2 séries par exercice · 60 s de repos","main":[{"ex":"hinge","r":"12"},{"ex":"row","r":"8–10"},{"ex":"rlunge","r":"8 / jambe"},{"ex":"ytw","r":"6 cycles"},{"ex":"superman","r":"10"},{"ex":"sideplank","t":20,"side":true}]},"C":{"title":"Circuit cardio","day":"Vendredi","circuit":true,"format":"4 tours · 40 s d'effort / 20 s de repos","short_format":"2 tours · 40 s d'effort / 20 s de repos","main":[{"ex":"boxsquat"},{"ex":"incline"},{"ex":"climber"},{"ex":"bridge"},{"ex":"rlunge","note":"Alterne les jambes"},{"ex":"birddog","note":"Alterne les côtés"}]}},"weeks":[{"t":"Apprentissage","n":"Vise la technique, garde 3 répétitions en réserve."},{"t":"Installation","n":"Version complète. Vise le haut de la fourchette de répétitions."},{"t":"Intensification","n":"Pompes sur un support plus bas, +5 s sur les gainages."},{"t":"Progression","n":"+2 répétitions partout, circuit en 45 s / 15 s. Repèse-toi en fin de semaine."}],"plan":[{"d":"2026-11-02","k":"A","short":true,"w":0},{"d":"2026-11-04","k":"B","short":true,"w":0},{"d":"2026-11-06","k":"C","short":true,"w":0},{"d":"2026-11-09","k":"A","short":false,"w":1},{"d":"2026-11-11","k":"B","short":false,"w":1},{"d":"2026-11-13","k":"C","short":false,"w":1},{"d":"2026-11-16","k":"A","short":true,"w":2},{"d":"2026-11-18","k":"B","short":true,"w":2},{"d":"2026-11-20","k":"C","short":true,"w":2},{"d":"2026-11-23","k":"A","short":false,"w":3},{"d":"2026-11-25","k":"B","short":false,"w":3},{"d":"2026-11-27","k":"C","short":false,"w":3}],"recipes":{"skyr":{"n":"Bol skyr-avoine-fruits rouges","type":"Petit-déj","kcal":460,"p":33,"time":"2 min","tool":"Aucun","ing":["250 g de skyr ou yaourt grec 0 %","40 g de flocons d'avoine (4 c. à soupe)","100 g de fruits rouges surgelés","15 g d'amandes (une petite poignée)","1 c. à café de miel"],"steps":["Verse le skyr dans un bol.","Ajoute l'avoine, les fruits rouges encore surgelés (ils décongèlent en 5 min) et les amandes.","Un filet de miel, c'est prêt."],"tip":"Fais-le le soir dans un pot fermé : le matin l'avoine est fondante (« overnight oats »)."},"mug":{"n":"Omelette au micro-ondes (en mug)","type":"Petit-déj","kcal":515,"p":39,"time":"4 min","tool":"Micro-ondes","ing":["3 œufs","1 tranche de jambon (ou dinde) coupée","1 poignée d'épinards (frais ou surgelés)","20 g de fromage râpé","2 tranches de pain complet","Sel, poivre"],"steps":["Casse les œufs dans un grand mug ou bol, bats à la fourchette 10 s.","Ajoute jambon, épinards, fromage, sel, poivre.","Micro-ondes 1 min, remue, puis encore 45 s–1 min jusqu'à ce que ce soit pris.","Mange avec le pain (grillé si tu veux)."],"tip":"Utilise un grand mug : ça gonfle ! Graisse-le avec un peu d'huile pour laver facilement."},"smoothie":{"n":"Smoothie protéiné (sans banane)","type":"Petit-déj","kcal":530,"p":34,"time":"3 min","tool":"Blender","ing":["300 ml de lait demi-écrémé","150 g de yaourt grec 0 %","40 g de flocons d'avoine","150 g de fruits rouges ou mangue surgelés","1 c. à soupe de beurre de cacahuète"],"steps":["Tout dans le blender.","Mixe 30–40 s.","Bois. Rince le blender tout de suite (10 s au lieu de 5 min plus tard)."],"tip":"Le fruit surgelé remplace la banane pour l'onctuosité. + 1 dose de whey = +24 g de protéines."},"bowlthon":{"n":"Bowl riz-thon-avocat","type":"Déjeuner","kcal":555,"p":34,"time":"4 min","tool":"Micro-ondes","ing":["200 g de riz basmati précuit (1 sachet micro-ondes)","1 boîte de thon au naturel égoutté","3 c. à soupe de maïs en boîte","Une poignée de tomates cerises","½ avocat","Sauce soja + jus de citron"],"steps":["Riz : 2 min au micro-ondes dans son sachet.","Dans un bol : riz, thon, maïs, tomates coupées en 2, avocat en dés.","Arrose de sauce soja et de citron."],"tip":"Variante : remplace le thon par 2 œufs durs ou du saumon fumé."},"wrap":{"n":"Wraps poulet-houmous","type":"Déjeuner","kcal":560,"p":42,"time":"5 min","tool":"Aucun","ing":["2 tortillas complètes","120 g de poulet déjà cuit (blanc tranché ou poulet rôti)","2 c. à soupe de houmous","Salade, tomate, concombre","Option : sauce piquante"],"steps":["Tartine les tortillas de houmous.","Ajoute poulet, salade, tomate et concombre en tranches.","Roule serré. Fini."],"tip":"Achète un poulet rôti et effiloche-le : 3 repas pour 5 min de travail."},"lentilles":{"n":"Salade lentilles-feta","type":"Déjeuner","kcal":580,"p":31,"time":"5 min","tool":"Aucun","ing":["1 boîte de lentilles égouttées (≈ 250 g)","60 g de feta","Tomates, concombre, ½ oignon rouge","1 c. à soupe d'huile d'olive","Jus de citron, sel, poivre"],"steps":["Rince les lentilles dans une passoire.","Coupe les légumes grossièrement, émiette la feta.","Mélange tout avec huile, citron, sel, poivre."],"tip":"Ça se garde 2 jours au frigo : fais double dose et garde la moitié pour le lendemain."},"pates":{"n":"Pâtes complètes thon-tomate","type":"Déjeuner","kcal":500,"p":42,"time":"10 min","tool":"Plaque","ing":["80 g de pâtes complètes (sèches)","150 g de sauce tomate en pot","1 boîte de thon au naturel","10 g de parmesan","Option : origan, piment"],"steps":["Fais cuire les pâtes (8–10 min).","Pendant ce temps : sauce + thon dans un bol, 1 min au micro-ondes.","Égoutte, mélange, parmesan dessus."],"tip":"Pâtes à cuisson rapide (fusilli 7 min) = encore plus de flemme assumée."},"saumon":{"n":"Saumon & légumes « tout sur la plaque »","type":"Dîner","kcal":605,"p":41,"time":"5 min + 20 min de four (sans rien faire)","tool":"Four","ing":["1 pavé de saumon (≈ 150 g)","200 g de brocoli (frais ou surgelé)","250 g de pommes de terre grenaille coupées en 2","1 c. à café d'huile d'olive","Sel, poivre, citron"],"steps":["Four à 200 °C.","Tout sur une plaque avec du papier cuisson : pommes de terre, brocoli, saumon.","Huile, sel, poivre. 20 min au four.","Citron dessus en sortant."],"tip":"Pas de vaisselle : tu jettes le papier cuisson."},"poelee":{"n":"Poêlée poulet-légumes-riz","type":"Dîner","kcal":525,"p":45,"time":"10 min","tool":"Poêle","ing":["150 g d'aiguillettes de poulet","300 g de poêlée de légumes surgelés","150 g de riz précuit (½ sachet)","1 c. à café d'huile","2 c. à soupe de sauce soja"],"steps":["Poêle chaude + huile : poulet 4 min.","Ajoute les légumes surgelés, 5 min à feu vif en remuant.","Ajoute le riz et la sauce soja, 1 min. Servi."],"tip":"Une seule poêle à laver. Varie les sauces : curry, teriyaki, paprika."},"patate":{"n":"Patate douce farcie","type":"Dîner","kcal":610,"p":35,"time":"10 min","tool":"Micro-ondes","ing":["1 grosse patate douce (≈ 300 g)","½ boîte de haricots rouges rincés","150 g de cottage cheese (ou fromage blanc)","20 g de fromage râpé","Ciboulette, paprika"],"steps":["Pique la patate 5–6 fois à la fourchette.","Micro-ondes 7–9 min (elle doit être tendre).","Ouvre-la, ajoute haricots et fromage râpé, 1 min au micro-ondes.","Cottage dessus + paprika."],"tip":"Version poulet : remplace les haricots par 100 g de poulet effiloché."},"shakshuka":{"n":"Shakshuka express","type":"Dîner","kcal":545,"p":30,"time":"8 min","tool":"Poêle","ing":["200 g de sauce tomate (pot)","3 œufs","40 g de feta","1 tranche de pain (60 g)","Cumin ou paprika"],"steps":["Chauffe la sauce dans une petite poêle avec les épices.","Fais 3 creux, casse un œuf dans chacun.","Couvercle, feu doux 5–6 min (blanc pris, jaune coulant).","Feta émiettée dessus, mange avec le pain."],"tip":"Pas de couvercle ? Une assiette retournée fait l'affaire."},"steak":{"n":"Steak haché, semoule & haricots verts","type":"Dîner","kcal":520,"p":43,"time":"8 min","tool":"Poêle + micro-ondes","ing":["1 steak haché 5 % (150 g)","60 g de semoule","250 g de haricots verts surgelés","1 c. à café d'huile d'olive","Sel, poivre"],"steps":["Semoule dans un bol + même volume d'eau bouillante (bouilloire), couvre 5 min.","Haricots : 4 min au micro-ondes avec un fond d'eau.","Steak : poêle chaude, 2–3 min par face.","Huile d'olive sur les légumes, sel, poivre."],"tip":"La semoule, c'est le féculent le plus flemme qui existe : zéro cuisson."},"c_skyr":{"n":"Skyr cannelle-miel","type":"Collation","kcal":160,"p":22,"time":"1 min","tool":"Aucun","ing":["200 g de skyr ou fromage blanc 0 %","Cannelle","1 c. à café de miel"],"steps":["Mélange. Mange."],"tip":"Le meilleur ratio protéines / effort qui existe."},"c_whey":{"n":"Shaker whey (après séance)","type":"Collation","kcal":190,"p":30,"time":"1 min","tool":"Shaker","ing":["1 dose de whey (30 g)","250 ml de lait demi-écrémé ou d'eau"],"steps":["Dans le shaker, secoue 10 s."],"tip":"Avec de l'eau : 120 kcal. Pratique dans l'heure après la séance."},"c_pomme":{"n":"Pomme + amandes","type":"Collation","kcal":200,"p":5,"time":"0 min","tool":"Aucun","ing":["1 pomme","20 g d'amandes (une poignée)"],"steps":["Croque."],"tip":"Coupe-faim de l'après-midi."},"c_cottage":{"n":"Cottage cheese & tomates cerises","type":"Collation","kcal":160,"p":18,"time":"1 min","tool":"Aucun","ing":["150 g de cottage cheese","Tomates cerises","Poivre, herbes"],"steps":["Dans un bol, poivre dessus."],"tip":"Version sucrée : avec des fruits rouges."},"c_dinde":{"n":"Tartines dinde","type":"Collation","kcal":230,"p":18,"time":"2 min","tool":"Aucun","ing":["2 tranches de pain complet","3 tranches de blanc de dinde","Moutarde"],"steps":["Tartine, empile, mange."],"tip":""}},"types":{"Petit-déj":"Petits-déjeuners","Déjeuner":"Déjeuners","Dîner":"Dîners","Collation":"Collations"},"menu":[{"day":"Lundi","s":"A","meals":[{"m":"Petit-déj","r":"skyr"},{"m":"Déjeuner 12h30","r":"bowlthon"},{"m":"Après la séance","r":"c_whey"},{"m":"Dîner","r":"poelee"},{"m":"Collation","r":"c_pomme"}]},{"day":"Mardi","s":null,"meals":[{"m":"Petit-déj","r":"mug"},{"m":"Déjeuner","r":"wrap"},{"m":"Collation","r":"c_cottage"},{"m":"Dîner","r":"saumon"},{"m":"Collation soir","r":"c_skyr"}]},{"day":"Mercredi","s":"B","meals":[{"m":"Petit-déj","r":"smoothie"},{"m":"Déjeuner 12h30","r":"lentilles"},{"m":"Après la séance","r":"c_skyr"},{"m":"Dîner","r":"steak"},{"m":"Collation","r":"c_pomme"}]},{"day":"Jeudi","s":null,"meals":[{"m":"Petit-déj","r":"skyr"},{"m":"Déjeuner","r":"pates"},{"m":"Collation","r":"c_dinde"},{"m":"Dîner","r":"shakshuka"},{"m":"Collation soir","r":"c_cottage"}]},{"day":"Vendredi","s":"C","meals":[{"m":"Petit-déj","r":"mug"},{"m":"Déjeuner 12h30","r":"wrap"},{"m":"Après la séance","r":"c_whey"},{"m":"Dîner","r":"patate"},{"m":"Collation","r":"c_pomme"}]},{"day":"Samedi","s":null,"meals":[{"m":"Petit-déj","r":"smoothie"},{"m":"Déjeuner","r":"lentilles"},{"m":"Collation","r":"c_skyr"},{"m":"Dîner","r":"saumon"},{"m":"Collation soir","r":"c_pomme"}]},{"day":"Dimanche","s":null,"meals":[{"m":"Petit-déj","r":"mug"},{"m":"Déjeuner","r":null},{"m":"Collation","r":"c_skyr"},{"m":"Dîner","r":"poelee"}]}],"shop":[{"g":"Frais","items":["Skyr / yaourt grec 0 % — 2 kg","Cottage cheese — 2 pots","Œufs — 18","Lait demi-écrémé — 2 L","Feta — 200 g","Fromage râpé — 1 sachet","Houmous — 1 pot","Jambon / blanc de dinde — 1 paquet"]},{"g":"Protéines","items":["Aiguillettes de poulet — 300 g","Poulet rôti ou blanc cuit tranché — 250 g","Pavés de saumon — 2","Steak haché 5 % — 1","Thon au naturel — 4 boîtes"]},{"g":"Féculents","items":["Riz basmati précuit — 3 sachets","Flocons d'avoine — 1 paquet","Pain complet — 1","Tortillas complètes — 1 paquet","Pâtes complètes — 1 paquet","Semoule — 1 paquet","Pommes de terre grenaille — 500 g","Patate douce — 1 grosse"]},{"g":"Placard","items":["Lentilles en boîte — 2","Haricots rouges en boîte — 1","Maïs en boîte — 1","Sauce tomate — 2 pots","Sauce soja","Huile d'olive","Miel","Beurre de cacahuète","Amandes — 200 g","Épices : paprika, cumin, cannelle"]},{"g":"Fruits & légumes","items":["Fruits rouges surgelés — 1 kg","Poêlée de légumes surgelés — 2 sachets","Haricots verts surgelés — 1 sachet","Brocoli (surgelé ou frais) — 500 g","Épinards surgelés — 1 sachet","Tomates cerises — 2 barquettes","Concombre — 2","Salade — 1","Avocats — 2","Pommes — 4","Citrons — 2","Oignon rouge — 1"]},{"g":"Option","items":["Whey protéine (≈ 1 kg dure 1 mois)","Créatine monohydrate (voir conseils)"]}],"rulesTrain":[{"t":"Technique d'abord","d":"Chaque répétition est contrôlée : 2 secondes pour descendre. Finis chaque série en pouvant encore en faire 2 ou 3."},{"t":"Progression","d":"Quand tu atteins le haut de la fourchette sur toutes les séries, passe à la variante plus difficile : support plus bas, amplitude plus grande, +5 s."},{"t":"Cheville","d":"« Genou au mur » à chaque séance, plus 2 minutes les jours de repos. Talons surélevés pour les squats en attendant."},{"t":"Douleur","d":"Une douleur articulaire vive n'est pas une brûlure musculaire : on arrête l'exercice."},{"t":"Règle des deux jours","d":"Tu peux rater une séance, jamais deux de suite. Dix minutes valent mieux que zéro."}],"rulesFood":[{"t":"Des protéines à chaque repas","d":"Œufs, skyr, poulet, thon, poisson, lentilles. C'est ce qui garde le muscle pendant que le gras part."},{"t":"Des légumes à chaque repas","d":"Surgelés, c'est parfait : aussi nutritifs et zéro épluchage."},{"t":"Féculents : un poing","d":"Riz, pâtes, pain, pommes de terre : en priorité aux repas d'avant et d'après séance."},{"t":"Boissons","d":"Eau, café, thé. Pas de jus ni de soda. L'alcool reste occasionnel : il freine la fonte du gras."}],"outside":["Remplis l'assiette dans l'ordre : légumes, puis protéine, puis féculent.","Au brunch : œufs, yaourt et fruits d'abord. Une seule viennoiserie ou un seul pancake.","Attends 10 minutes avant de te resservir : la faim baisse souvent d'elle-même.","Repas pauvre en protéines ? Ajoute un skyr ou un shaker en rentrant.","Le repas pris sur place remplace celui du menu. Garde les collations."],"optimize":[{"t":"8 000 pas par jour","d":"Ton meilleur levier contre le gras. Une marche de 20 minutes après le dîner aide aussi la digestion et le sommeil."},{"t":"140 g de protéines","d":"Si tu en manques, rattrape avec un skyr ou un shaker. C'est ce qui protège le muscle en déficit calorique."},{"t":"7 h 30 de sommeil","d":"En dessous de 6 h, le corps perd plus de muscle et moins de gras, et les fringales augmentent."},{"t":"Créatine, 3 à 5 g par jour","d":"Le complément le plus étudié pour la force et le muscle. Peu cher, à prendre tous les jours dans de l'eau. Optionnel."},{"t":"Élastiques de résistance","d":"Environ 20–25 €. Ils rendent le tirage et les jambes bien plus efficaces : le meilleur achat après le tapis."},{"t":"Mesure chaque semaine","d":"Balance à jeun, tour de taille au nombril, photo de face et de profil toutes les deux semaines. Regarde la tendance, pas un chiffre isolé."}],"profile":null};</script>
+<script>/* Programme maison — app. Données injectées dans window.D par build_app.py */
+(() => {
+"use strict";
+const D = window.D;
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const app = $("#app");
+
+/* ---------- icons ---------- */
+const P = {
+  today:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  train:'<path d="M6 7v10M3 9.5v5M18 7v10M21 9.5v5M6 12h12"/>',
+  food:'<path d="M7 3v7a2 2 0 0 0 2 2v9M5 3v5.5M9 3v5.5M17 21V3c-2.2 1.6-3 4.4-3 8h3"/>',
+  cart:'<path d="M3 4h2.2l2.3 10.3a1 1 0 0 0 1 .7h8.7a1 1 0 0 0 1-.8L20 8H6.3"/><circle cx="9.5" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/>',
+  tips:'<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/>',
+  chev:'<path d="M9 6l6 6-6 6"/>', back:'<path d="M15 6l-6 6 6 6"/>', x:'<path d="M6 6l12 12M18 6L6 18"/>',
+  check:'<path d="M5 12.5l4.5 4.5L19 7"/>', pause:'<path d="M9 5v14M15 5v14"/>',
+  snd:'<path d="M4 9.5v5h3.5L12 18V6L7.5 9.5H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/>',
+  mute:'<path d="M4 9.5v5h3.5L12 18V6L7.5 9.5H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/>',
+  copy:'<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>',
+  ankle:'<path d="M9 3v9l-4 5v2h12l2-3-6-2V3"/>', play:'<path d="M8 5v14l11-7z"/>'
+};
+const ic = (n, cls = "") => `<svg viewBox="0 0 24 24" class="${cls}" aria-hidden="true">${P[n]}</svg>`;
+const playIc = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+
+/* ---------- storage ---------- */
+const store = {
+  get(k, d) { try { const v = localStorage.getItem("pm:" + k); return v === null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v) { try { localStorage.setItem("pm:" + k, JSON.stringify(v)); } catch {} },
+  del(k) { try { localStorage.removeItem("pm:" + k); } catch {} }
+};
+
+/* ---------- dates ---------- */
+const qsDate = new URLSearchParams(location.search).get("date");
+const iso = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+const parse = s => { const [y, m, d] = s.split("-").map(Number); return new Date(y, m - 1, d); };
+const TODAY = qsDate && /^\d{4}-\d\d-\d\d$/.test(qsDate) ? qsDate : iso(new Date());
+const JOURS = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+const MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+const fmtLong = s => { const d = parse(s); return `${JOURS[d.getDay()]} ${d.getDate()} ${MOIS[d.getMonth()]}`; };
+const fmtShort = s => { const d = parse(s); return `${JOURS[d.getDay()].slice(0, 3)}. ${d.getDate()}`; };
+const menuIdx = s => (parse(s).getDay() + 6) % 7; // lundi = 0
+
+const planToday = D.plan.find(p => p.d === TODAY);
+const planNext = D.plan.find(p => p.d > TODAY);
+const curWeek = (() => { const p = D.plan.filter(p => p.d <= TODAY).pop(); return p ? p.w : -1; })();
+const nextFor = k => D.plan.find(p => p.k === k && p.d >= TODAY) || D.plan.filter(p => p.k === k).pop();
+const done = () => store.get("done", {});
+const isDone = d => !!done()[d];
+
+/* ---------- feedback ---------- */
+let toastT;
+function toast(msg) {
+  let t = $(".toast"); if (!t) { t = document.createElement("div"); t.className = "toast"; t.setAttribute("role", "status"); document.body.append(t); }
+  t.textContent = msg; requestAnimationFrame(() => t.classList.add("show"));
+  clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), 2200);
+}
+let actx;
+function beep(f = 880, dur = .12, vol = .25) {
+  if (!store.get("sound", true)) return;
+  try {
+    actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+    if (actx.state === "suspended") actx.resume();
+    const o = actx.createOscillator(), g = actx.createGain();
+    o.frequency.value = f; o.type = "sine"; o.connect(g); g.connect(actx.destination);
+    const t = actx.currentTime; g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(.001, t + dur);
+    o.start(t); o.stop(t + dur + .02);
+  } catch {}
+}
+const buzz = p => { try { navigator.vibrate && navigator.vibrate(p); } catch {} };
+
+/* ---------- shared fragments ---------- */
+const thumb = v => `https://i.ytimg.com/vi/${v}/mqdefault.jpg`;
+const video = (v, label = "Voir la démonstration") =>
+  `<button class="vid" data-vid="${v}" style="background-image:url(${thumb(v)})" aria-label="${esc(label)}"><span class="pl">${playIc}</span><span class="lb">${esc(label)}</span></button>`;
+const dose = it => it.t ? `${it.t} s${it.side ? " / côté" : ""}` : (it.r || "");
+
+/* ---------- router ---------- */
+let prevPath = null, depth = 0;
+function route() {
+  const h = location.hash.replace(/^#/, "");
+  const legacy = h.match(/^seance-([ABC])$/); if (legacy) return location.replace(`#/seance/${legacy[1]}`);
+  const [path, q] = (h || "/").split("?"); const qs = new URLSearchParams(q || "");
+  const parts = path.split("/").filter(Boolean);
+  const tab = { "": "today", seances: "train", seance: "train", menu: "food", courses: "cart", conseils: "tips" }[parts[0] || ""] ?? "today";
+  closePlayer(true);
+  if (parts[0] === "go") { prevPath = null; return openPlayer(parts[1], qs.get("v"), parts[1] === "cheville"); }
+  if (path !== prevPath) {
+    stopVideos();
+    const v = { "": vToday, seances: vSessions, seance: () => vSession(parts[1], qs.get("v")), menu: () => vMenu(qs.get("j")), courses: vShop, conseils: vTips }[parts[0] || ""] || vToday;
+    app.innerHTML = `<div class="view">${v()}</div>`;
+    window.scrollTo(0, 0);
+    document.title = { today: "Aujourd'hui", train: "Séances", food: "Menu", cart: "Courses", tips: "Conseils" }[tab] + " · Programme maison";
+    bindView();
+  }
+  prevPath = path;
+  document.querySelectorAll(".tabs a").forEach(a => a.dataset.tab === tab ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
+  qs.get("r") ? openSheet(qs.get("r")) : closeSheet();
+}
+window.addEventListener("hashchange", () => { depth++; route(); });
+const go = h => { location.hash = h; };
+const goBack = fallback => { if (depth > 0) history.back(); else location.replace(fallback); };
+
+/* ---------- views ---------- */
+function heroToday() {
+  const run = store.get("run", null);
+  if (planToday) {
+    const s = D.sessions[planToday.k], dn = isDone(TODAY), mode = planToday.short ? "short" : "full";
+    const mins = planToday.short ? 20 : 30;
+    const resume = !dn && run && run.date === TODAY && run.k === planToday.k && run.idx > 0;
+    return `<section class="hero" style="--c:var(--${planToday.k})">
+      <span class="k" aria-hidden="true">${planToday.k}</span>
+      <span class="eyebrow">Séance du jour · 14h00</span>
+      <h2>${esc(s.title)}</h2>
+      <div class="meta"><span><b>${mins} min</b></span><span>${esc(planToday.short ? s.short_format : s.format)}</span><span>Semaine ${planToday.w + 1} · ${esc(D.weeks[planToday.w].t)}</span></div>
+      ${dn ? `<div class="row"><span class="done-badge">${ic("check")}Séance faite</span><a class="btn btn-ghost" href="#/seance/${planToday.k}?v=${mode}">Revoir</a></div>`
+           : `<div class="row"><a class="btn btn-primary" href="#/go/${planToday.k}?v=${mode}">${resume ? "Reprendre" : "Commencer"}</a><a class="btn btn-ghost" href="#/seance/${planToday.k}?v=${mode}">Aperçu</a></div>
+              <button class="linkbtn" data-act="mark" style="margin-top:6px">Déjà faite ? Marquer comme faite</button>`}
+      ${resume ? `<div class="resume"><span>Arrêtée à l'étape ${run.idx + 1}. Tu reprends là où tu étais.</span></div>` : ""}
+    </section>`;
+  }
+  const n = planNext;
+  const first = D.plan[0].d > TODAY, over = !n;
+  return `<section class="hero rest">
+    <span class="eyebrow">${first ? "Bientôt" : over ? "Programme terminé" : "Jour de repos"}</span>
+    <h2>${first ? "Le programme commence " + esc(fmtLong(D.plan[0].d).toLowerCase()) : over ? "Bravo, 4 semaines bouclées" : "Récupère et marche"}</h2>
+    <div class="meta">${n ? `<span>Prochaine séance : <b>${esc(fmtLong(n.d))}</b> · ${n.k} ${esc(D.sessions[n.k].title)}</span>` : "<span>Refais-toi une pesée et le tour de taille pour comparer.</span>"}</div>
+    <div class="row">${n ? `<a class="btn btn-primary" href="#/seance/${n.k}?v=${n.short ? "short" : "full"}">Voir la séance ${n.k}</a>` : `<a class="btn btn-primary" href="#/seances">Revoir les séances</a>`}</div>
+  </section>`;
+}
+function strip() {
+  const d = done();
+  return `<div class="strip">${D.weeks.map((w, i) => `<div class="wk"><span>S${i + 1}</span><div class="dots">${
+    D.plan.filter(p => p.w === i).map(p => `<a class="dot ${d[p.d] ? "done" : p.d === TODAY ? "today" : p.d < TODAY ? "past" : ""}" style="--c:var(--${p.k})" href="#/seance/${p.k}?v=${p.short ? "short" : "full"}" aria-label="${esc(fmtLong(p.d))}, séance ${p.k}${d[p.d] ? ", faite" : ""}">${p.k}</a>`).join("")
+  }</div></div>`).join("")}</div>`;
+}
+function vToday() {
+  const m = D.menu[menuIdx(TODAY)], cnt = Object.keys(done()).length;
+  const pf = D.profile;
+  return `<header class="today-head"><div><div class="eyebrow">${esc(fmtLong(TODAY))}</div><h1 class="title">${pf ? "Salut " + esc(pf.name) : "Aujourd'hui"}</h1></div></header>
+  ${heroToday()}
+  <a class="quick" href="#/go/cheville"><span class="ic">${ic("ankle")}</span><span><b>Mobilité cheville</b><small>2 min guidées · à faire chaque jour</small></span><span class="chev">${ic("chev")}</span></a>
+  <div id="install"></div>
+  <h2 class="h2">Menu du jour</h2>
+  <div class="list">${m.meals.map(x => mealRow(x, m.day, "/")).join("")}</div>
+  <h2 class="h2" style="display:flex;justify-content:space-between;align-items:baseline">Progression <span class="small muted" style="font-weight:600">${cnt} / ${D.plan.length} séances</span></h2>
+  ${strip()}
+  ${pf ? `<h2 class="h2">Point de départ</h2><div class="stats">${pf.stats.map(s => `<div><small>${esc(s[0])}</small><b>${esc(s[1])}</b><small>${esc(s[2])}</small></div>`).join("")}</div>` : ""}`;
+}
+function mealRow(x, day, base) {
+  if (!x.r) return `<div class="li"><span class="when">${esc(x.m)}</span><span class="main"><b>Repas plaisir</b><small>Ce que tu veux, sans te resservir</small></span></div>`;
+  const r = D.recipes[x.r];
+  return `<a class="li" href="${base === "/" ? "#/?r=" + x.r : `#/menu?j=${D.menu.findIndex(d => d.day === day)}&r=${x.r}`}"><span class="when">${esc(x.m)}</span><span class="main"><b>${esc(r.n)}</b><small>${esc(r.time.split(" ")[0])} ${esc(r.time.split(" ")[1] || "")} · ${r.p} g de protéines</small></span><span class="chev">${ic("chev")}</span></a>`;
+}
+
+function vSessions() {
+  const d = done();
+  return `<h1 class="title">Séances</h1><p class="lead">Trois séances par semaine, à 14h00. Touche une séance pour la voir, ou une date pour la version prévue ce jour-là.</p>
+  <h2 class="h2">Les 3 séances</h2>
+  <div class="scards">${Object.entries(D.sessions).map(([k, s]) => `<a class="scard" style="--c:var(--${k})" href="#/seance/${k}"><span class="k">${k}</span><span><h3>${esc(s.title)}</h3><p>${esc(s.day)} · ${esc(s.format)}</p></span><span class="chev">${ic("chev")}</span></a>`).join("")}</div>
+  <h2 class="h2">Calendrier</h2>
+  <div class="weeks">${D.weeks.map((w, i) => `<div class="week ${i === curWeek ? "cur" : ""}"><header><b>Semaine ${i + 1} · ${esc(w.t)}</b>${i === curWeek ? '<span class="tag lime">En cours</span>' : ""}</header><p>${esc(w.n)}</p>
+    <div class="slots">${D.plan.filter(p => p.w === i).map(p => `<a class="slot ${d[p.d] ? "done" : ""}" style="--c:var(--${p.k})" href="#/seance/${p.k}?v=${p.short ? "short" : "full"}"><b>${esc(fmtShort(p.d))}<i>${p.k}</i></b><small>${d[p.d] ? "Faite" : p.short ? "20 min" : "30 min"}</small></a>`).join("")}</div></div>`).join("")}</div>
+  <h2 class="h2">Les règles</h2>
+  <div class="rules">${D.rulesTrain.map(r => `<div><b>${esc(r.t)}</b><p>${esc(r.d)}</p></div>`).join("")}</div>`;
+}
+
+function exItem(it, phaseKey) {
+  const e = D.ex[it.ex];
+  return `<details class="exi" name="ex-${phaseKey}"><summary><img class="th" src="${thumb(e.v)}" alt="" loading="lazy" decoding="async" width="84" height="47"><span class="nm"><b>${esc(e.n)}</b>${it.note ? `<small class="muted small">${esc(it.note)}</small>` : ""}</span><span class="dz">${esc(dose(it))}</span><span class="chev">${ic("chev")}</span></summary>
+  <div class="body">${video(e.v)}<p>${esc(e.how)}</p><p class="tip">${esc(e.tip)}</p><a class="yt" href="https://www.youtube.com/watch?v=${e.v}" target="_blank" rel="noopener">Ouvrir dans YouTube</a></div></details>`;
+}
+function vSession(k, v) {
+  const s = D.sessions[k]; if (!s) return vSessions();
+  const p = nextFor(k); const mode = v || (p && p.short ? "short" : "full");
+  const main = s.circuit ? s.main.map(it => ({ ...it, t: 40 })) : s.main;
+  return `<a class="back" href="#/seances" data-back="#/seances">${ic("back")}Séances</a>
+  <div class="shero" style="--c:var(--${k})"><div class="k">${k}</div><h1 class="title">${esc(s.title)}</h1>
+  <p class="lead" id="fmt">${esc(mode === "short" ? s.short_format : s.format)}</p>
+  <div class="seg" role="group" aria-label="Durée" data-v="${mode}"><span class="pill"></span><button data-mode="full" aria-pressed="${mode === "full"}">Complète · 30 min</button><button data-mode="short" aria-pressed="${mode === "short"}">Courte · 20 min</button></div></div>
+  <section class="phase"><h2>Échauffement <span>${mode === "short" ? "3" : "5"} min</span></h2>${D.warmup.map(it => exItem(it, "w")).join("")}</section>
+  <section class="phase"><h2>${s.circuit ? "Circuit" : "Corps de séance"} <span id="sets">${s.circuit ? (mode === "short" ? "2 tours" : "4 tours") : (mode === "short" ? "2 séries" : "3 séries")}</span></h2>${main.map(it => exItem(it, "m")).join("")}</section>
+  <section class="phase"><h2>Retour au calme <span>3 min</span></h2>${D.cooldown.map(it => exItem(it, "c")).join("")}</section>
+  <div style="height:84px"></div>
+  <div class="cta"><div><a class="btn btn-primary btn-block" id="start" href="#/go/${k}?v=${mode}">Commencer la séance</a></div></div>`;
+}
+
+function vMenu(j) {
+  const di = j !== null && j !== undefined && D.menu[+j] ? +j : menuIdx(TODAY);
+  const ti = menuIdx(TODAY);
+  return `<h1 class="title">Menu</h1><p class="lead">10 minutes maximum par repas, rien à préparer à l'avance. Échange librement deux repas du même type.</p>
+  <div class="days" role="group" aria-label="Jour">${D.menu.map((d, i) => `<button data-day="${i}" aria-pressed="${i === di}" class="${i === ti ? "is-today" : ""}"><small>${esc(d.day.slice(0, 3).toUpperCase())}</small>${d.s ? `<span style="color:var(--${d.s})">${d.s}</span>` : "·"}</button>`).join("")}</div>
+  <div id="dayview">${dayView(di)}</div>
+  <h2 class="h2">Toutes les recettes</h2>
+  ${Object.entries(D.types).map(([t, label]) => `<div class="rgroup"><h3>${esc(label)}</h3><div class="list">${Object.entries(D.recipes).filter(([, r]) => r.type === t).map(([id, r]) =>
+     `<a class="li" href="#/menu?j=${di}&r=${id}"><span class="main"><b>${esc(r.n)}</b><small>${esc(r.time)} · ${esc(r.tool)}</small></span><span class="mac">${r.kcal} kcal<small>${r.p} g prot.</small></span><span class="chev">${ic("chev")}</span></a>`).join("")}</div></div>`).join("")}
+  <h2 class="h2">L'assiette idéale</h2>
+  <div class="plate"><div style="background:#1f3a2a;color:#9fe0b4"><b>½</b>Légumes</div><div style="background:#3a2a20;color:#ffbf9a"><b>¼</b>Protéine</div><div style="background:#33301c;color:#f3d77a"><b>¼</b>Féculent</div></div>
+  <div class="rules" style="margin-top:10px">${D.rulesFood.map(r => `<div><b>${esc(r.t)}</b><p>${esc(r.d)}</p></div>`).join("")}</div>
+  <h2 class="h2">Repas sur place</h2><ul class="bul">${D.outside.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+  <p class="small dim" style="margin-top:26px">Calories et protéines estimées à ±10 % à partir de valeurs nutritionnelles moyennes.</p>`;
+}
+function dayView(i) {
+  const d = D.menu[i]; let k = 0, p = 0;
+  d.meals.forEach(x => { if (x.r) { k += D.recipes[x.r].kcal; p += D.recipes[x.r].p; } });
+  const free = d.meals.some(x => !x.r);
+  return `<div class="totals"><div><b>${free ? "≈ " + (k + 700) : k}</b><span>kcal${free ? " (repas plaisir inclus)" : ""}</span></div><div><b>${p} g</b><span>protéines</span></div>${d.s ? `<span class="tag" style="margin-left:auto">Séance ${d.s}</span>` : ""}</div>
+  <div class="list">${d.meals.map(x => mealRow(x, d.day)).join("")}</div>`;
+}
+
+function vShop() {
+  const st = store.get("shop", {}); const all = D.shop.flatMap(g => g.items); const n = all.filter(x => st[x]).length;
+  return `<h1 class="title">Courses</h1><p class="lead">Pour une semaine de menu. Coche en magasin : la liste est gardée sur ton téléphone.</p>
+  <div class="progress" aria-hidden="true"><i id="bar" style="width:${(n / all.length) * 100}%"></i></div>
+  <div class="toolbar"><span class="small muted" id="cnt">${n} / ${all.length} articles</span><span><button class="linkbtn" data-act="copy">Copier la liste</button><button class="linkbtn" data-act="reset">Tout décocher</button></span></div>
+  ${D.shop.map(g => `<h2 class="h2" style="font-size:19px;margin-top:24px">${esc(g.g)}</h2><div class="list">${g.items.map(x => `<label class="ck"><input type="checkbox" data-item="${esc(x)}" ${st[x] ? "checked" : ""}><span class="bx">${ic("check")}</span><span>${esc(x)}</span></label>`).join("")}</div>`).join("")}`;
+}
+function vTips() {
+  return `<h1 class="title">Conseils</h1><p class="lead">Ce qui fait la différence en dehors des séances.</p>
+  <h2 class="h2">Pour optimiser</h2><div class="rules">${D.optimize.map(r => `<div><b>${esc(r.t)}</b><p>${esc(r.d)}</p></div>`).join("")}</div>
+  <h2 class="h2">À l'entraînement</h2><div class="rules">${D.rulesTrain.map(r => `<div><b>${esc(r.t)}</b><p>${esc(r.d)}</p></div>`).join("")}</div>
+  <h2 class="h2">Réglages</h2><div class="list">
+    <button class="li" data-act="sound"><span class="main"><b>Sons du minuteur</b><small id="sndl">${store.get("sound", true) ? "Activés" : "Désactivés"}</small></span><span class="chev">${ic(store.get("sound", true) ? "snd" : "mute")}</span></button>
+    <button class="li" data-act="wipe"><span class="main"><b>Réinitialiser la progression</b><small>Efface les séances cochées sur cet appareil</small></span></button></div>`;
+}
+
+/* ---------- bindings ---------- */
+function stopVideos() { document.querySelectorAll(".vid iframe").forEach(f => f.remove()); }
+document.addEventListener("click", e => {
+  const v = e.target.closest(".vid");
+  if (v && !v.querySelector("iframe")) {
+    e.preventDefault();
+    const f = document.createElement("iframe");
+    f.src = `https://www.youtube-nocookie.com/embed/${v.dataset.vid}?autoplay=1&playsinline=1&rel=0&modestbranding=1`;
+    f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen"; f.allowFullscreen = true; f.title = "Démonstration";
+    v.append(f); v.querySelector(".pl")?.remove(); v.querySelector(".lb")?.remove();
+    return;
+  }
+  const b = e.target.closest("[data-back]");
+  if (b && depth > 0) { e.preventDefault(); history.back(); return; }
+  const a = e.target.closest("[data-act]"); if (!a) return;
+  const act = a.dataset.act;
+  if (act === "mark") { const d = done(); d[TODAY] = true; store.set("done", d); store.del("run"); buzz(30); toast("Séance marquée comme faite"); prevPath = null; route(); }
+  if (act === "reset") { store.set("shop", {}); prevPath = null; route(); toast("Liste remise à zéro"); }
+  if (act === "copy") {
+    const st = store.get("shop", {}); const txt = D.shop.map(g => g.g + "\n" + g.items.filter(x => !st[x]).map(x => "- " + x).join("\n")).join("\n\n");
+    (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(() => toast("Liste copiée"), () => toast("Copie impossible sur ce navigateur"));
+  }
+  if (act === "sound") { store.set("sound", !store.get("sound", true)); prevPath = null; route(); beep(); }
+  if (act === "wipe") { if (confirm("Effacer la progression enregistrée sur cet appareil ?")) { store.del("done"); store.del("run"); toast("Progression effacée"); } }
+});
+function bindView() {
+  const seg = $(".seg");
+  if (seg) seg.addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    const m = b.dataset.mode; seg.dataset.v = m;
+    seg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    const k = location.hash.match(/seance\/([ABC])/)[1], s = D.sessions[k];
+    $("#fmt").textContent = m === "short" ? s.short_format : s.format;
+    $("#sets").textContent = s.circuit ? (m === "short" ? "2 tours" : "4 tours") : (m === "short" ? "2 séries" : "3 séries");
+    $("#start").href = `#/go/${k}?v=${m}`;
+    history.replaceState(null, "", `#/seance/${k}?v=${m}`); prevPath = `/seance/${k}`;
+  });
+  const days = $(".days");
+  if (days) {
+    days.addEventListener("click", e => {
+      const b = e.target.closest("button"); if (!b) return;
+      days.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+      const dv = $("#dayview"); dv.innerHTML = dayView(+b.dataset.day); dv.animate?.([{ opacity: 0, transform: "translateY(6px)" }, { opacity: 1, transform: "none" }], { duration: 240, easing: "cubic-bezier(.2,.8,.2,1)" });
+      history.replaceState(null, "", `#/menu?j=${b.dataset.day}`);
+    });
+  }
+  app.querySelectorAll(".ck input").forEach(i => i.addEventListener("change", () => {
+    const st = store.get("shop", {}); st[i.dataset.item] = i.checked; store.set("shop", st); if (i.checked) buzz(10);
+    const all = D.shop.flatMap(g => g.items), n = all.filter(x => st[x]).length;
+    $("#bar").style.width = (n / all.length) * 100 + "%"; $("#cnt").textContent = `${n} / ${all.length} articles`;
+  }));
+  installBanner();
+}
+
+/* ---------- recipe sheet ---------- */
+let sheetEl;
+function openSheet(id) {
+  const r = D.recipes[id]; if (!r) return;
+  if (!sheetEl) {
+    sheetEl = document.createElement("div"); sheetEl.className = "sheet"; sheetEl.setAttribute("role", "dialog"); sheetEl.setAttribute("aria-modal", "true");
+    sheetEl.innerHTML = `<div class="bd"></div><div class="pn"></div>`; document.body.append(sheetEl);
+    sheetEl.querySelector(".bd").addEventListener("click", () => closeSheetNav());
+    dragClose(sheetEl.querySelector(".pn"));
+  }
+  const pn = sheetEl.querySelector(".pn");
+  pn.innerHTML = `<div class="grab"></div><button class="icon-btn x" aria-label="Fermer">${ic("x")}</button>
+  <div class="rhead"><span class="eyebrow">${esc(r.type)}</span><h2 id="rt">${esc(r.n)}</h2></div>
+  <div class="facts"><div><b>${r.kcal}</b><small>kcal</small></div><div><b>${r.p} g</b><small>protéines</small></div><div><b>${esc(r.time.split(" ")[0])}</b><small>${esc(r.time.split(" ")[1] || "min")}</small></div><div><b style="font-size:14px;line-height:1.9">${esc(r.tool)}</b><small>matériel</small></div></div>
+  ${r.time.includes("four") ? `<p class="small muted">Dont 20 minutes de four pendant lesquelles tu ne fais rien.</p>` : ""}
+  <div class="sec-t">Ingrédients</div><ul class="ing">${r.ing.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+  <div class="sec-t">Préparation</div><ol class="steps">${r.steps.map(x => `<li><span>${esc(x)}</span></li>`).join("")}</ol>
+  ${r.tip ? `<p class="tip" style="margin-top:14px">${esc(r.tip)}</p>` : ""}`;
+  sheetEl.setAttribute("aria-labelledby", "rt");
+  pn.querySelector(".x").addEventListener("click", () => closeSheetNav());
+  pn.scrollTop = 0; pn.style.transform = "";
+  if (!sheetEl.classList.contains("open")) {
+    sheetEl.classList.add("open"); document.body.style.overflow = "hidden";
+    requestAnimationFrame(() => requestAnimationFrame(() => sheetEl.classList.add("show")));
+    setTimeout(() => pn.querySelector(".x").focus({ preventScroll: true }), 50);
+  }
+}
+function closeSheetNav() { if (depth > 0) history.back(); else location.replace(location.hash.replace(/[?&]r=[^&]*/, "")); }
+function closeSheet() {
+  if (!sheetEl || !sheetEl.classList.contains("open")) return;
+  sheetEl.classList.remove("show"); document.body.style.overflow = "";
+  setTimeout(() => { if (!sheetEl.classList.contains("show")) sheetEl.classList.remove("open"); }, 380);
+}
+function dragClose(pn) {
+  let y0 = null, dy = 0;
+  pn.addEventListener("touchstart", e => { if (pn.scrollTop <= 0) { y0 = e.touches[0].clientY; dy = 0; pn.style.transition = "none"; } }, { passive: true });
+  pn.addEventListener("touchmove", e => { if (y0 === null) return; dy = Math.max(0, e.touches[0].clientY - y0); if (dy > 0) pn.style.transform = `translateY(${dy}px)`; }, { passive: true });
+  pn.addEventListener("touchend", () => { if (y0 === null) return; pn.style.transition = ""; if (dy > 110) closeSheetNav(); else pn.style.transform = ""; y0 = null; });
+}
+document.addEventListener("keydown", e => { if (e.key === "Escape" && sheetEl?.classList.contains("open")) closeSheetNav(); });
+
+/* ---------- player ---------- */
+function buildSteps(k, mode) {
+  const short = mode === "short", w = (D.plan.find(p => p.d === TODAY && p.k === k) || nextFor(k) || { w: 0 }).w;
+  const S = [], ex = (it, phase, extra = {}) => {
+    const base = { ex: it.ex, phase, note: it.note, ...extra };
+    let t = it.t; if (t && (it.ex === "plank" || it.ex === "sideplank") && w >= 2) t += 5;
+    if (t && it.side) { S.push({ ...base, t, side: "Côté 1" }); S.push({ ...base, t, side: "Côté 2", auto: true }); }
+    else S.push({ ...base, t, r: it.r });
+  };
+  const rest = (t, label) => S.push({ rest: true, t, label, auto: true });
+  D.warmup.filter(it => !(short && it.ex === "circles")).forEach(it => ex(it, "Échauffement"));
+  const s = D.sessions[k];
+  if (s.circuit) {
+    const R = short ? 2 : 4, work = w >= 3 ? 45 : 40, rs = w >= 3 ? 15 : 20;
+    for (let r = 1; r <= R; r++) s.main.forEach((it, i) => {
+      ex({ ...it, t: work }, "Circuit", { set: `Tour ${r} / ${R}`, auto: !(r === 1 && i === 0) });
+      if (i < s.main.length - 1) rest(rs, "Récupère"); else if (r < R) rest(60, "Pause entre les tours");
+    });
+  } else {
+    const N = short ? 2 : 3;
+    s.main.forEach((it, i) => { for (let n = 1; n <= N; n++) {
+      ex(it, "Corps de séance", { set: `Série ${n} / ${N}` });
+      if (!(i === s.main.length - 1 && n === N)) rest(60, "Repos");
+    } });
+  }
+  D.cooldown.forEach((it, i) => ex(it, "Retour au calme", { auto: i > 0 }));
+  return S;
+}
+function ankleSteps() { return [{ ex: "knee", r: "10 / côté", phase: "Mobilité cheville" }, { ex: "knee", t: 30, side: "Côté 1", phase: "Mobilité cheville", note: "Tiens en fin d'amplitude" }, { ex: "knee", t: 30, side: "Côté 2", phase: "Mobilité cheville", auto: true }, { ex: "calf", t: 30, side: "Côté 1", phase: "Mobilité cheville", auto: true }, { ex: "calf", t: 30, side: "Côté 2", phase: "Mobilité cheville", auto: true }]; }
+
+let PL = null;
+function openPlayer(k, mode, ankle) {
+  if (!ankle && !D.sessions[k]) return go("#/");
+  mode = mode === "short" ? "short" : "full";
+  const steps = ankle ? ankleSteps() : buildSteps(k, mode);
+  const run = store.get("run", null);
+  const idx = !ankle && run && run.k === k && run.mode === mode && run.date === TODAY ? Math.min(run.idx, steps.length - 1) : 0;
+  const el = document.createElement("div"); el.className = "player"; el.setAttribute("role", "dialog"); el.setAttribute("aria-label", "Séance guidée");
+  el.style.setProperty("--c", ankle ? "var(--lime)" : `var(--${k})`);
+  document.body.append(el); document.body.style.overflow = "hidden";
+  PL = { k, mode, ankle, steps, idx, el, timer: null, started: (run && idx > 0 && run.started) || Date.now(), dir: 1 };
+  wake(true);
+  renderStep();
+}
+function closePlayer(silent) {
+  if (!PL) return;
+  clearTimer(); wake(false); PL.el.remove(); PL = null; document.body.style.overflow = "";
+  if (!silent) toast("Progression gardée");
+}
+function save() { if (PL && !PL.ankle) store.set("run", { k: PL.k, mode: PL.mode, idx: PL.idx, date: TODAY, started: PL.started }); }
+function nextEx(from) { for (let i = from + 1; i < PL.steps.length; i++) if (!PL.steps[i].rest) return PL.steps[i]; return null; }
+
+function renderStep() {
+  const { steps, idx, el } = PL, st = steps[idx];
+  clearTimer(); save();
+  const pct = (idx / steps.length) * 100;
+  const e = st.rest ? null : D.ex[st.ex];
+  let body;
+  if (st.rest) {
+    const n = nextEx(idx), ne = n && D.ex[n.ex];
+    body = `<div class="rest-k"><span class="eyebrow">${esc(st.label)}</span>${ring(st.t)}
+      ${ne ? `<div class="nextup"><img class="th" src="${thumb(ne.v)}" alt="" width="96" height="54"><div><span class="eyebrow">À suivre${n.set ? " · " + esc(n.set) : ""}</span><b style="display:block;margin-top:2px">${esc(ne.n)}</b><small class="muted">${esc(n.t ? n.t + " s" + (n.side ? " · " + n.side : "") : n.r)}</small></div></div>` : ""}
+      <div class="p-sub"><button class="btn btn-ghost" data-p="add" style="min-height:44px">+15 s</button></div></div>`;
+  } else {
+    body = `<div class="p-phase"><span class="tag">${esc(st.phase)}</span>${st.set ? `<span class="tag lime">${esc(st.set)}</span>` : ""}${st.side ? `<span class="tag">${esc(st.side)}</span>` : ""}</div>
+      <h1 class="p-name">${esc(e.n)}</h1>
+      ${st.t ? ring(st.t) : `<div class="p-dose">${esc(st.r)}<small>répétitions</small></div>`}
+      ${st.note ? `<p class="p-note">${esc(st.note)}</p>` : ""}
+      ${video(e.v)}
+      <details class="p-how"${st.t ? "" : " open"}><summary>Comment faire <span class="chev">${ic("chev")}</span></summary><p>${esc(e.how)}</p><p class="tip">${esc(e.tip)}</p></details>`;
+  }
+  const label = st.rest ? "Passer" : st.t ? "Démarrer" : (st.set ? "Série terminée" : "Fait");
+  el.innerHTML = `<div class="p-top"><button class="icon-btn" data-p="close" aria-label="Quitter la séance">${ic("x")}</button><div class="p-bar"><i style="width:${pct}%"></i></div><span class="p-count">${idx + 1}/${steps.length}</span><button class="icon-btn" data-p="snd" aria-label="Sons">${ic(store.get("sound", true) ? "snd" : "mute")}</button></div>
+  <div class="p-body"><div class="p-step ${PL.dir < 0 ? "back-anim" : ""}">${body}</div></div>
+  <div class="p-ctrl"><button class="icon-btn" data-p="prev" aria-label="Étape précédente" ${idx === 0 ? "disabled" : ""}>${ic("back")}</button><button class="btn btn-primary" data-p="main">${label}</button><button class="icon-btn" data-p="next" aria-label="Passer l'étape">${ic("chev")}</button></div>`;
+  el.onclick = onPlayerClick;
+  el.querySelector(".p-body").scrollTop = 0;
+  if (st.t && (st.rest || st.auto)) startTimer(st.rest ? 0 : 3);
+}
+function ring(t) {
+  const C = 2 * Math.PI * 54;
+  return `<div class="ring paused"><svg viewBox="0 0 120 120"><circle class="tr" cx="60" cy="60" r="54"/><circle class="fg" cx="60" cy="60" r="54" stroke-dasharray="${C}" stroke-dashoffset="0"/></svg><div class="num"><div><span id="tn">${t}</span><small id="tl">secondes</small></div></div></div>`;
+}
+function onPlayerClick(e) {
+  const b = e.target.closest("[data-p]"); if (!b) return;
+  const a = b.dataset.p, st = PL.steps[PL.idx];
+  if (a === "close") { const ank = PL.ankle, k = PL.k; closePlayer(ank); goBack(ank ? "#/" : `#/seance/${k}`); return; }
+  if (a === "snd") { store.set("sound", !store.get("sound", true)); b.innerHTML = ic(store.get("sound", true) ? "snd" : "mute"); beep(); return; }
+  if (a === "prev") return step(-1);
+  if (a === "next") return step(1);
+  if (a === "add" && PL.timer) { PL.timer.end += 15000; PL.timer.total += 15; return; }
+  if (a === "main") {
+    try { actx = actx || new (window.AudioContext || window.webkitAudioContext)(); actx.resume(); } catch {}
+    if (st.rest) return step(1);
+    if (!st.t) { buzz(15); return step(1); }
+    if (!PL.timer) return startTimer(3);
+    if (PL.timer.paused) resumeTimer(); else pauseTimer();
+  }
+}
+function step(d) {
+  const n = PL.idx + d; PL.dir = d;
+  if (n < 0) return;
+  if (n >= PL.steps.length) return finish();
+  PL.idx = n; renderStep();
+}
+function clearTimer() { if (PL && PL.timer) { cancelAnimationFrame(PL.timer.raf); PL.timer = null; } }
+function startTimer(prep) {
+  const st = PL.steps[PL.idx];
+  PL.timer = { total: st.t, prep, end: Date.now() + (prep + st.t) * 1000, paused: false, last: null, raf: 0 };
+  setMain("Pause"); $(".ring", PL.el)?.classList.remove("paused");
+  tick();
+}
+function pauseTimer() { const t = PL.timer; t.paused = true; t.left = t.end - Date.now(); cancelAnimationFrame(t.raf); setMain("Reprendre"); $(".ring", PL.el)?.classList.add("paused"); }
+function resumeTimer() { const t = PL.timer; t.paused = false; t.end = Date.now() + t.left; setMain("Pause"); $(".ring", PL.el)?.classList.remove("paused"); tick(); }
+function setMain(txt) { const b = $('[data-p="main"]', PL.el); if (b && !PL.steps[PL.idx].rest) b.textContent = txt; }
+function tick() {
+  const t = PL.timer; if (!t || t.paused) return;
+  const left = Math.max(0, t.end - Date.now());
+  const inPrep = left > t.total * 1000;
+  const secs = inPrep ? Math.ceil((left - t.total * 1000) / 1000) : Math.ceil(left / 1000);
+  const fg = $(".ring .fg", PL.el), tn = $("#tn", PL.el), tl = $("#tl", PL.el), rg = $(".ring", PL.el);
+  const C = 2 * Math.PI * 54;
+  if (fg) fg.style.strokeDashoffset = inPrep ? 0 : C * (1 - left / (t.total * 1000));
+  if (tn && tn.textContent !== String(secs)) {
+    tn.textContent = secs; tl.textContent = inPrep ? "Prêt ?" : "secondes";
+    if (secs !== t.last) {
+      if (inPrep) { beep(660, .1, .2); }
+      else if (secs <= 3 && secs > 0) beep(880, .1);
+      if (!inPrep && t.last !== null && t.wasPrep) { beep(1175, .25, .3); buzz(60); }
+    }
+  }
+  rg && rg.classList.toggle("go", !inPrep && secs <= 3 && secs > 0);
+  t.wasPrep = inPrep; t.last = secs;
+  if (left <= 0) {
+    beep(1320, .35, .3); buzz([80, 60, 80]);
+    PL.dir = 1;
+    if (PL.idx + 1 >= PL.steps.length) return finish();
+    PL.idx++; return renderStep();
+  }
+  t.raf = requestAnimationFrame(tick);
+}
+function finish() {
+  clearTimer();
+  const mins = Math.max(1, Math.round((Date.now() - PL.started) / 60000));
+  if (!PL.ankle) {
+    const d = done(); const p = D.plan.find(x => x.k === PL.k && x.d === TODAY) || D.plan.find(x => x.k === PL.k && !d[x.d] && x.d <= TODAY);
+    d[p ? p.d : TODAY] = true; store.set("done", d); store.del("run");
+  }
+  buzz([60, 40, 120]); beep(988, .15); setTimeout(() => beep(1319, .3), 160);
+  const s = PL.ankle ? null : D.sessions[PL.k];
+  PL.el.innerHTML = `<div class="p-body"><div class="end"><div class="chk">${ic("check")}</div>
+    <span class="eyebrow">${PL.ankle ? "Mobilité" : "Séance " + PL.k}</span><h1>${PL.ankle ? "Cheville travaillée" : "Séance terminée"}</h1>
+    <p class="lead">${PL.ankle ? "Deux minutes par jour suffisent pour progresser." : `${esc(s.title)} · ${mins} min. Pense à un repas riche en protéines dans l'heure.`}</p>
+    <div class="row">${PL.ankle ? "" : `<a class="btn btn-primary" href="#/menu" data-p="out">Voir le menu du jour</a>`}<a class="btn btn-ghost" href="#/" data-p="out">Terminer</a></div></div></div>`;
+  PL.el.onclick = e => { const a = e.target.closest('[data-p="out"]'); if (a) { e.preventDefault(); const h = a.getAttribute("href"); closePlayer(true); prevPath = null; location.replace(h); } };
+  wake(false);
+}
+let wl = null;
+async function wake(on) {
+  try {
+    if (on && "wakeLock" in navigator) { wl = await navigator.wakeLock.request("screen"); }
+    else if (!on && wl) { await wl.release(); wl = null; }
+  } catch {}
+}
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible" && PL) { wake(true); if (PL.timer && !PL.timer.paused) tick(); }
+});
+document.addEventListener("keydown", e => {
+  if (!PL) return;
+  if (e.key === "ArrowRight") step(1); else if (e.key === "ArrowLeft") step(-1);
+  else if (e.key === " ") { e.preventDefault(); $('[data-p="main"]', PL.el)?.click(); }
+  else if (e.key === "Escape") $('[data-p="close"]', PL.el)?.click();
+});
+
+/* ---------- install hint ---------- */
+let deferred = null;
+window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); deferred = e; installBanner(); });
+function installBanner() {
+  const box = $("#install"); if (!box) return;
+  const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+  const mobile = /iphone|ipad|android/i.test(navigator.userAgent);
+  if (standalone || store.get("noInstall", false) || !(mobile || deferred)) { box.innerHTML = ""; return; }
+  const ios = /iphone|ipad/i.test(navigator.userAgent);
+  box.innerHTML = `<div class="banner"><p><b>Ajoute l'app à ton écran d'accueil</b><br>${deferred ? "Elle s'ouvrira en plein écran, même hors connexion." : ios ? "Touche Partager, puis « Sur l'écran d'accueil »." : "Menu du navigateur, puis « Ajouter à l'écran d'accueil »."}</p>
+  ${deferred ? `<button class="btn btn-primary" style="min-height:40px;padding:0 14px" id="inst">Installer</button>` : ""}<button class="icon-btn" id="noinst" aria-label="Masquer" style="width:36px;height:36px">${ic("x")}</button></div>`;
+  $("#noinst").onclick = () => { store.set("noInstall", true); box.innerHTML = ""; };
+  $("#inst") && ($("#inst").onclick = async () => { deferred.prompt(); await deferred.userChoice; deferred = null; box.innerHTML = ""; });
+}
+
+/* ---------- boot ---------- */
+document.querySelector(".tabs").innerHTML = `<nav aria-label="Navigation principale">${[
+  ["today", "#/", "Aujourd'hui"], ["train", "#/seances", "Séances"], ["food", "#/menu", "Menu"], ["cart", "#/courses", "Courses"], ["tips", "#/conseils", "Conseils"]
+].map(([t, h, l]) => `<a href="${h}" data-tab="${t}">${ic(t)}<span>${l}</span></a>`).join("")}</nav>`;
+route();
+if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js").catch(() => {});
+})();
+</script>
+</body></html>
